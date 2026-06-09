@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IC {{ franchise }} · {{ period }} · DA07QUMX</title>
+<title>Restaurant Co. México · {{ franchise }} · {{ period }}</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -399,7 +399,6 @@ body.pdf-mode .speed-rr-val {
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="logo">OptimaReports<span>.ai</span></div>
-  <div class="top-code">DA07QUMX</div>
   <div class="top-meta" id="top-meta-text">Restaurant Co. México · {{ franchise }} · {{ n_stores }} Tiendas · {{ period }}</div>
   <div class="topbar-right">
     <div class="top-meta" id="clock"></div>
@@ -1597,11 +1596,11 @@ function drawTab(id) {
 function drawResumen() {
   // KPI strip row 1 (Alerts & KBPs)
   document.getElementById('kpiMainAlerts').innerHTML = [
-      {l:tr('Total KBP'),v:fmt(D.kbp),s:tr('alertas') + ' · ' + D.period,c:'var(--kbp-purple)'},
-      {l:tr('Experiencia del Cliente'),v:fmt(D.ce),s:D.ce_pct+'% ' + tr('del KBP'),c:'var(--ce)'},
-      {l:tr('Reducción de Costos'),v:fmt(D.rc),s:D.rc_pct+'% ' + tr('del KBP'),c:'var(--rc)'},
-      {l:tr('Conformidad Operacional'),v:fmt(D.co),s:D.co_pct+'% ' + tr('del KBP'),c:'var(--co)'},
-      {l:tr('Cam Check'),v:fmt(D.cam_total),s:D.cam_stores_count+' ' + tr('tiendas afect.'),c:'var(--cam)'},
+      {l:tr('Total KBP'),v:fmt(D.kbp) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:tr('alertas') + ' · ' + D.period,c:'var(--kbp-purple)'},
+      {l:tr('Experiencia del Cliente'),v:fmt(D.ce) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:D.ce_pct+'% ' + tr('del KBP'),c:'var(--ce)'},
+      {l:tr('Reducción de Costos'),v:fmt(D.rc) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:D.rc_pct+'% ' + tr('del KBP'),c:'var(--rc)'},
+      {l:tr('Conformidad Operacional'),v:fmt(D.co) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:D.co_pct+'% ' + tr('del KBP'),c:'var(--co)'},
+      {l:tr('Cam Check'),v:fmt(D.cam_total) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:D.cam_stores_count+' ' + tr('tiendas afect.'),c:'var(--cam)'},
     ].map(k=>`<div class="kpi" style="--kc:${k.c}"><div class="kpi-label">${k.l}</div><div class="kpi-val" style="color:${k.c}">${k.v}</div><div class="kpi-sub">${k.s}</div></div>`).join('');
 
   // KPI strip row 2 (Tiempo de Servicios)

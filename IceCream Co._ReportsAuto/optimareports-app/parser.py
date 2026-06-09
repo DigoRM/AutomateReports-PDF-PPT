@@ -256,7 +256,7 @@ def parse_franchise(xlsx_path, franchise_name, period, period_long):
         'co_top10_stack': top10_area_stack('CO'),
         'period':       period,
         'period_long':  period_long,
-        'code':         'DA07QUMX',
+        'code':         '',
         'n_stores':     n,
         'kbp': kbp_total,
         'ce': ce, 'ce_pct': round(ce/kbp_total*100, 1) if kbp_total else 0,
