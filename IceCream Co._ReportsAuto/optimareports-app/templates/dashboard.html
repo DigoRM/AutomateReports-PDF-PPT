@@ -42,6 +42,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px;margin-bottom:18px;}
 .kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px 15px;position:relative;overflow:hidden;}
 .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--kc,var(--ce));}
+.kpi.kpi-total{background:linear-gradient(135deg, rgba(139,92,246,0.12), rgba(139,92,246,0.03));border-color:var(--kbp-purple);box-shadow:0 4px 12px rgba(139,92,246,0.08);}
 .kpi-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
 .kpi-val{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--bright);line-height:1;}
 .kpi-val.t{font-size:22px;font-family:'DM Mono',monospace;}
@@ -1596,20 +1597,20 @@ function drawTab(id) {
 function drawResumen() {
   // KPI strip row 1 (Alerts & KBPs)
   document.getElementById('kpiMainAlerts').innerHTML = [
-      {l:tr('Total KBP'),v:fmt(D.kbp) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:tr('alertas') + ' · ' + D.period,c:'var(--kbp-purple)'},
+      {l:tr('Total KBP'),v:fmt(D.kbp) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:tr('alertas') + ' · ' + D.period,c:'var(--kbp-purple)',isTotal:true},
       {l:tr('Experiencia del Cliente'),v:fmt(D.ce) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:D.ce_pct+'% ' + tr('del KBP'),c:'var(--ce)'},
       {l:tr('Reducción de Costos'),v:fmt(D.rc) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:D.rc_pct+'% ' + tr('del KBP'),c:'var(--rc)'},
       {l:tr('Conformidad Operacional'),v:fmt(D.co) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:D.co_pct+'% ' + tr('del KBP'),c:'var(--co)'},
       {l:tr('Cam Check'),v:fmt(D.cam_total) + ' <span style="font-size:13px; font-weight:500; font-family:\'DM Sans\',sans-serif; text-transform:lowercase; opacity:0.8;">' + tr('alertas') + '</span>',s:D.cam_stores_count+' ' + tr('tiendas afect.'),c:'var(--cam)'},
-    ].map(k=>`<div class="kpi" style="--kc:${k.c}"><div class="kpi-label">${k.l}</div><div class="kpi-val" style="color:${k.c}">${k.v}</div><div class="kpi-sub">${k.s}</div></div>`).join('');
+    ].map(k=>`<div class="kpi ${k.isTotal ? 'kpi-total' : ''}" style="--kc:${k.c}"><div class="kpi-label">${k.l}</div><div class="kpi-val" style="color:${k.c}">${k.v}</div><div class="kpi-sub">${k.s}</div></div>`).join('');
 
   // KPI strip row 2 (Tiempo de Servicios)
   document.getElementById('kpiMainTimes').innerHTML = [
-      {l:'Tiempo de Fila',v:D.queue_avg,s:'promedio grupo',c:'var(--time-metric)'},
-      {l:'Tiempo de Orden',v:D.ord_avg,s:'promedio grupo',c:'var(--time-metric)'},
-      {l:'Tiempo de Recepción',v:D.recv_avg,s:'promedio grupo',c:'var(--time-metric)'},
-      {l:'Tiempo de Servicio',v:D.svc_avg,s:'promedio grupo',c:'var(--time-metric)'},
-      {l:'Tiempo de Delivery',v:D.del_avg,s:'promedio grupo',c:'var(--delivery)'},
+      {l:tr('Tiempo de Fila'),v:D.queue_avg,s:tr('promedio grupo'),c:'var(--time-metric)'},
+      {l:tr('Tiempo de Orden'),v:D.ord_avg,s:tr('promedio grupo'),c:'var(--time-metric)'},
+      {l:tr('Tiempo de Recepción'),v:D.recv_avg,s:tr('promedio grupo'),c:'var(--time-metric)'},
+      {l:tr('Tiempo de Servicio'),v:D.svc_avg,s:tr('promedio grupo'),c:'var(--time-metric)'},
+      {l:tr('Tiempo de Delivery'),v:D.del_avg,s:tr('promedio grupo'),c:'var(--delivery)'},
     ].map(k=>`<div class="kpi" style="--kc:${k.c}"><div class="kpi-label">${k.l}</div><div class="kpi-val t" style="color:${k.c}">${k.v}</div><div class="kpi-sub">${k.s}</div></div>`).join('');
 
 
