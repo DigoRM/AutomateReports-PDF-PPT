@@ -734,10 +734,10 @@ body.pdf-mode .speed-rr-val {
         <table class="tbl" style="font-size:11px;">
           <thead><tr><th data-tr="hdr-alert">Alerta</th><th class="r" data-tr="hdr-num">N</th><th class="r" data-tr="hdr-pct">%</th></tr></thead>
           <tbody>
-            <tr><td>Repartidor esperando &gt;1min</td><td class="r" style="color:var(--delivery)" id="delWaitLabel"></td><td class="r" id="delWaitPctLabel"></td></tr>
-            <tr><td>Verificar empaque</td><td class="r" style="color:var(--delivery)" id="delPkgLabel"></td><td class="r" id="delPkgPctLabel"></td></tr>
-            <tr><td>Repartidor con producto en ropa</td><td class="r" style="color:var(--delivery)" id="delClothesLabel"></td><td class="r" id="delClothesPctLabel"></td></tr>
-            <tr><td>Empaque cerrado</td><td class="r" style="color:var(--delivery)" id="delPkgClosedLabel"></td><td class="r" id="delPkgClosedPctLabel"></td></tr>
+            <tr><td data-tr="Repartidor esperando >1min">Repartidor esperando &gt;1min</td><td class="r" style="color:var(--delivery)" id="delWaitLabel"></td><td class="r" id="delWaitPctLabel"></td></tr>
+            <tr><td data-tr="Verificar empaque">Verificar empaque</td><td class="r" style="color:var(--delivery)" id="delPkgLabel"></td><td class="r" id="delPkgPctLabel"></td></tr>
+            <tr><td data-tr="Repartidor con producto en ropa">Repartidor con producto en ropa</td><td class="r" style="color:var(--delivery)" id="delClothesLabel"></td><td class="r" id="delClothesPctLabel"></td></tr>
+            <tr><td data-tr="Empaque cerrado">Empaque cerrado</td><td class="r" style="color:var(--delivery)" id="delPkgClosedLabel"></td><td class="r" id="delPkgClosedPctLabel"></td></tr>
           </tbody>
         </table>
       </div>
@@ -866,6 +866,11 @@ const DB_L = {
     // Topbar
     'top-meta': 'IceCream Co. México · {{ franchise }} · {{ n_stores }} Tiendas · {{ period }}',
     'clock': 'Reloj',
+
+    'Promedio': 'Promedio',
+    '⚡ MÁS RÁPIDAS': '⚡ MÁS RÁPIDAS',
+    '🐌 MÁS LENTAS': '🐌 MÁS LENTAS',
+
     'btn-pdf-server': '⬇ PDF Completo (Servidor)',
     'btn-pptx-server': '⬇ PPTX Completo (Pitch)',
     
@@ -1042,6 +1047,11 @@ const DB_L = {
     // Topbar
     'top-meta': 'IceCream Co. México · {{ franchise }} · {{ n_stores }} Lojas · {{ period }}',
     'clock': 'Relógio',
+
+    'Promedio': 'Média',
+    '⚡ MÁS RÁPIDAS': '⚡ MAIS RÁPIDAS',
+    '🐌 MÁS LENTAS': '🐌 MAIS LENTAS',
+
     'btn-pdf-server': '⬇ PDF Completo (Servidor)',
     'btn-pptx-server': '⬇ PPTX Completo (Pitch)',
     
@@ -1221,6 +1231,11 @@ const DB_L = {
     // Topbar
     'top-meta': 'IceCream Co. Mexico · {{ franchise }} · {{ n_stores }} Stores · {{ period }}',
     'clock': 'Clock',
+
+    'Promedio': 'Average',
+    '⚡ MÁS RÁPIDAS': '⚡ FASTEST',
+    '🐌 MÁS LENTAS': '🐌 SLOWEST',
+
     'btn-pdf-server': '⬇ Full PDF (Server)',
     'btn-pptx-server': '⬇ Full PPTX (Pitch)',
     
@@ -1541,7 +1556,7 @@ const rankRow = (i,name,val,col,extra='') => `<div class="rr">
 const kbpPanel = (lbl,total,pctStr,col,stores) => `
 <div class="kbpp">
   <div class="kbpp-hdr" style="background:${col}22;border-bottom:1px solid ${col}44">
-    <span class="kbpp-label" style="color:${col}">${lbl}</span>
+    <span class="kbpp-label" style="color:${col}">${tr(lbl)}</span>
     <span class="kbpp-num" style="color:${col}">${fmt(total)}</span>
     <span class="kbpp-pct" style="color:${col}">${pctStr}</span>
   </div>
@@ -1898,19 +1913,19 @@ function drawVelocidad() {
   document.getElementById('speedCards').innerHTML = metrics.map(m=>`
     <div class="card speed-card">
       <div>
-          <div class="card-title" style="color:${m.c};margin-bottom:8px">${m.label}</div>
+          <div class="card-title" style="color:${m.c};margin-bottom:8px">${tr(m.label)}</div>
           <div class="speed-avg-val" style="color:${m.c}">${m.avg}</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:4px">Promedio</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px">${tr('Promedio')}</div>
       </div>
       <div class="speed-chart-container">
           <canvas id="cDist_${m.id}"></canvas>
       </div>
       <div>
-          <div class="sp-hdr" style="color:var(--green);margin-bottom:8px">⚡ MÁS RÁPIDAS</div>
+          <div class="sp-hdr" style="color:var(--green);margin-bottom:8px">${tr('⚡ MÁS RÁPIDAS')}</div>
           ${m.fast.map((r,i)=>`<div class="rr speed-rr speed-fast"><div class="rr-badge" style="background:var(--green);font-size:9px">${i+1}</div><span class="rr-name">${sn(r[0])}</span><span class="speed-rr-val" style="color:var(--green)">${r[1]}</span></div>`).join('')}
       </div>
       <div>
-          <div class="sp-hdr" style="color:var(--danger);margin-bottom:8px">🐌 MÁS LENTAS</div>
+          <div class="sp-hdr" style="color:var(--danger);margin-bottom:8px">${tr('🐌 MÁS LENTAS')}</div>
           ${m.slow.map((r,i)=>`<div class="rr speed-rr speed-slow"><div class="rr-badge" style="background:var(--danger);font-size:9px">${i+1}</div><span class="rr-name">${sn(r[0])}</span><span class="speed-rr-val" style="color:var(--danger)">${r[1]}</span></div>`).join('')}
       </div>
     </div>`).join('');
@@ -1986,7 +2001,7 @@ function drawKBP(id) {
     type:'bar',
     data:{
       labels: sortedStack.map(s => sn(s[0])),
-      datasets: [{label:'Alertas', data:sumArr, backgroundColor:getCol(C.col)+'99', borderColor:getCol(C.col), borderWidth:1, borderRadius:4}]
+      datasets: [{label:tr('alertas'), data:sumArr, backgroundColor:getCol(C.col)+'99', borderColor:getCol(C.col), borderWidth:1, borderRadius:4}]
     },
     options: {
       ...co,
