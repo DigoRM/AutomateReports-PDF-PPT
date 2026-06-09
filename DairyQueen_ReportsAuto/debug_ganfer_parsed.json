@@ -1,0 +1,2450 @@
+{
+  "franchise": "Ganfer",
+  "ord_lt1": 0.5271,
+  "ord_1to2": 0.2114,
+  "ord_gt2": 0.2615,
+  "queue_lt1": 0.6813,
+  "queue_1to2": 0.1994,
+  "queue_gt2": 0.1193,
+  "recv_lt1": 0.6188,
+  "recv_1to2": 0.1034,
+  "recv_gt2": 0.2779,
+  "store_kbp_stacks": [
+    [
+      "DQ Marcoplaza Tij [g]",
+      48,
+      4,
+      8,
+      1
+    ],
+    [
+      "DQ Jurica [g]",
+      35,
+      11,
+      10,
+      2
+    ],
+    [
+      "DQ La Paz [g]",
+      40,
+      12,
+      4,
+      3
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      16,
+      20,
+      9,
+      4
+    ],
+    [
+      "Las Torres [g]",
+      19,
+      16,
+      19,
+      5
+    ],
+    [
+      "DQ Mazatlan Insurgentes [g]",
+      19,
+      32,
+      1,
+      6
+    ],
+    [
+      "DQ Marketplace [g]",
+      36,
+      12,
+      3,
+      7
+    ],
+    [
+      "DQ Fresnillo [g]",
+      34,
+      13,
+      4,
+      8
+    ],
+    [
+      "DQ Salinas [g]",
+      29,
+      10,
+      8,
+      9
+    ],
+    [
+      "DQ Puebla [g]",
+      16,
+      27,
+      5,
+      10
+    ],
+    [
+      "DQ Lopez Mateos [g]",
+      24,
+      12,
+      12,
+      11
+    ],
+    [
+      "DQ Morelia [g]",
+      16,
+      19,
+      10,
+      12
+    ],
+    [
+      "DQ Ensenada Reforma [g]",
+      30,
+      6,
+      6,
+      13
+    ],
+    [
+      "DQ Aguascalientes Sur [g]",
+      16,
+      18,
+      8,
+      14
+    ],
+    [
+      "DQ Playas [g]",
+      1,
+      34,
+      5,
+      15
+    ],
+    [
+      "DQ Esfera [g]",
+      23,
+      11,
+      3,
+      16
+    ],
+    [
+      "DQ Xochimilco [g]",
+      1,
+      38,
+      2,
+      17
+    ],
+    [
+      "DQ Hampton [g]",
+      13,
+      20,
+      4,
+      18
+    ],
+    [
+      "DQ Nuevo Mexicali [g]",
+      23,
+      10,
+      2,
+      19
+    ],
+    [
+      "DQ Oaxaca [g]",
+      16,
+      11,
+      6,
+      20
+    ]
+  ],
+  "store_area_stacks": [
+    [
+      "DQ Marcoplaza Tij [g]",
+      47,
+      11,
+      2,
+      0,
+      1,
+      1
+    ],
+    [
+      "DQ Jurica [g]",
+      41,
+      10,
+      5,
+      0,
+      1,
+      2
+    ],
+    [
+      "DQ La Paz [g]",
+      50,
+      2,
+      3,
+      1,
+      0,
+      3
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      26,
+      16,
+      3,
+      0,
+      10,
+      4
+    ],
+    [
+      "Las Torres [g]",
+      28,
+      22,
+      4,
+      0,
+      0,
+      5
+    ],
+    [
+      "DQ Mazatlan Insurgentes [g]",
+      51,
+      0,
+      1,
+      0,
+      0,
+      6
+    ],
+    [
+      "DQ Marketplace [g]",
+      37,
+      11,
+      2,
+      1,
+      1,
+      7
+    ],
+    [
+      "DQ Fresnillo [g]",
+      44,
+      4,
+      2,
+      1,
+      0,
+      8
+    ],
+    [
+      "DQ Salinas [g]",
+      31,
+      14,
+      2,
+      0,
+      2,
+      9
+    ],
+    [
+      "DQ Puebla [g]",
+      43,
+      5,
+      0,
+      0,
+      0,
+      10
+    ],
+    [
+      "DQ Lopez Mateos [g]",
+      26,
+      20,
+      1,
+      1,
+      0,
+      11
+    ],
+    [
+      "DQ Morelia [g]",
+      24,
+      17,
+      3,
+      1,
+      3,
+      12
+    ],
+    [
+      "DQ Ensenada Reforma [g]",
+      33,
+      7,
+      2,
+      0,
+      1,
+      13
+    ],
+    [
+      "DQ Aguascalientes Sur [g]",
+      25,
+      14,
+      2,
+      1,
+      0,
+      14
+    ],
+    [
+      "DQ Playas [g]",
+      13,
+      26,
+      0,
+      1,
+      2,
+      15
+    ],
+    [
+      "DQ Esfera [g]",
+      26,
+      10,
+      1,
+      0,
+      3,
+      16
+    ],
+    [
+      "DQ Xochimilco [g]",
+      18,
+      22,
+      0,
+      1,
+      0,
+      17
+    ],
+    [
+      "DQ Hampton [g]",
+      24,
+      8,
+      3,
+      2,
+      0,
+      18
+    ],
+    [
+      "DQ Nuevo Mexicali [g]",
+      32,
+      2,
+      1,
+      0,
+      0,
+      19
+    ],
+    [
+      "DQ Oaxaca [g]",
+      25,
+      6,
+      2,
+      0,
+      0,
+      20
+    ]
+  ],
+  "dt_stores_ranking": [
+    [
+      "DQ Hampton [g]",
+      2,
+      5.7,
+      18
+    ],
+    [
+      "DQ Aguascalientes Sur [g]",
+      1,
+      2.4,
+      14
+    ],
+    [
+      "DQ Fresnillo [g]",
+      1,
+      2.0,
+      8
+    ],
+    [
+      "DQ La Paz [g]",
+      1,
+      1.8,
+      3
+    ],
+    [
+      "DQ Lopez Mateos [g]",
+      1,
+      2.1,
+      11
+    ],
+    [
+      "DQ Marketplace [g]",
+      1,
+      2.0,
+      7
+    ],
+    [
+      "DQ Morelia [g]",
+      1,
+      2.1,
+      12
+    ],
+    [
+      "DQ Playas [g]",
+      1,
+      2.4,
+      15
+    ],
+    [
+      "DQ Xochimilco [g]",
+      1,
+      2.5,
+      17
+    ]
+  ],
+  "delivery_stores_ranking": [
+    [
+      "DQ Pabellon Reforma [g]",
+      "0:30",
+      "2:50",
+      55,
+      5.5,
+      30
+    ],
+    [
+      "DQ Playas [g]",
+      "0:45",
+      "2:21",
+      41,
+      0.0,
+      45
+    ],
+    [
+      "DQ La Paz [g]",
+      "0:49",
+      "5:15",
+      55,
+      5.5,
+      49
+    ],
+    [
+      "DQ Salinas [g]",
+      "0:58",
+      "3:13",
+      49,
+      4.1,
+      58
+    ],
+    [
+      "DQ Nuevo Mexicali [g]",
+      "1:03",
+      "3:47",
+      35,
+      2.9,
+      63
+    ],
+    [
+      "DQ Hampton [g]",
+      "1:09",
+      "2:48",
+      35,
+      8.6,
+      69
+    ],
+    [
+      "DQ Xochimilco [g]",
+      "1:10",
+      "2:31",
+      40,
+      0.0,
+      70
+    ],
+    [
+      "DQ Morelia [g]",
+      "1:15",
+      "4:34",
+      47,
+      6.4,
+      75
+    ],
+    [
+      "DQ Mazatlan Insurgentes [g]",
+      "1:24",
+      "3:20",
+      52,
+      1.9,
+      84
+    ],
+    [
+      "DQ Marketplace [g]",
+      "1:26",
+      "4:33",
+      51,
+      3.9,
+      86
+    ],
+    [
+      "DQ Puebla [g]",
+      "1:29",
+      "3:47",
+      48,
+      0.0,
+      89
+    ],
+    [
+      "Las Torres [g]",
+      "1:33",
+      "3:51",
+      54,
+      7.4,
+      93
+    ],
+    [
+      "DQ Aguascalientes Sur [g]",
+      "1:46",
+      "4:09",
+      41,
+      4.9,
+      106
+    ],
+    [
+      "DQ Jurica [g]",
+      "1:48",
+      "4:11",
+      57,
+      8.8,
+      108
+    ],
+    [
+      "DQ Marcoplaza Tij [g]",
+      "1:57",
+      "4:04",
+      61,
+      3.3,
+      117
+    ],
+    [
+      "DQ Fresnillo [g]",
+      "1:58",
+      "5:22",
+      50,
+      4.0,
+      118
+    ],
+    [
+      "DQ Lopez Mateos [g]",
+      "2:32",
+      "4:10",
+      47,
+      2.1,
+      152
+    ],
+    [
+      "DQ Ensenada Reforma [g]",
+      "2:46",
+      "5:55",
+      43,
+      4.7,
+      166
+    ],
+    [
+      "DQ Oaxaca [g]",
+      "2:46",
+      "3:57",
+      33,
+      6.1,
+      166
+    ],
+    [
+      "DQ Esfera [g]",
+      "4:34",
+      "4:52",
+      40,
+      2.5,
+      274
+    ]
+  ],
+  "ce_top10_stack": [
+    [
+      "DQ Marcoplaza Tij [g]",
+      47,
+      11,
+      2,
+      0,
+      1,
+      1
+    ],
+    [
+      "DQ La Paz [g]",
+      50,
+      2,
+      3,
+      1,
+      0,
+      3
+    ],
+    [
+      "DQ Marketplace [g]",
+      37,
+      11,
+      2,
+      1,
+      1,
+      7
+    ],
+    [
+      "DQ Jurica [g]",
+      41,
+      10,
+      5,
+      0,
+      1,
+      2
+    ],
+    [
+      "DQ Fresnillo [g]",
+      44,
+      4,
+      2,
+      1,
+      0,
+      8
+    ],
+    [
+      "DQ Ensenada Reforma [g]",
+      33,
+      7,
+      2,
+      0,
+      1,
+      13
+    ],
+    [
+      "DQ Salinas [g]",
+      31,
+      14,
+      2,
+      0,
+      2,
+      9
+    ],
+    [
+      "DQ Lopez Mateos [g]",
+      26,
+      20,
+      1,
+      1,
+      0,
+      11
+    ],
+    [
+      "DQ Esfera [g]",
+      26,
+      10,
+      1,
+      0,
+      3,
+      16
+    ],
+    [
+      "DQ Nuevo Mexicali [g]",
+      32,
+      2,
+      1,
+      0,
+      0,
+      19
+    ]
+  ],
+  "rc_top10_stack": [
+    [
+      "DQ Xochimilco [g]",
+      18,
+      22,
+      0,
+      1,
+      0,
+      17
+    ],
+    [
+      "DQ Playas [g]",
+      13,
+      26,
+      0,
+      1,
+      2,
+      15
+    ],
+    [
+      "DQ Mazatlan Insurgentes [g]",
+      51,
+      0,
+      1,
+      0,
+      0,
+      6
+    ],
+    [
+      "DQ Puebla [g]",
+      43,
+      5,
+      0,
+      0,
+      0,
+      10
+    ],
+    [
+      "DQ Hampton [g]",
+      24,
+      8,
+      3,
+      2,
+      0,
+      18
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      26,
+      16,
+      3,
+      0,
+      10,
+      4
+    ],
+    [
+      "DQ Morelia [g]",
+      24,
+      17,
+      3,
+      1,
+      3,
+      12
+    ],
+    [
+      "DQ Aguascalientes Sur [g]",
+      25,
+      14,
+      2,
+      1,
+      0,
+      14
+    ],
+    [
+      "Las Torres [g]",
+      28,
+      22,
+      4,
+      0,
+      0,
+      5
+    ],
+    [
+      "DQ Fresnillo [g]",
+      44,
+      4,
+      2,
+      1,
+      0,
+      8
+    ]
+  ],
+  "co_top10_stack": [
+    [
+      "Las Torres [g]",
+      28,
+      22,
+      4,
+      0,
+      0,
+      5
+    ],
+    [
+      "DQ Lopez Mateos [g]",
+      26,
+      20,
+      1,
+      1,
+      0,
+      11
+    ],
+    [
+      "DQ Jurica [g]",
+      41,
+      10,
+      5,
+      0,
+      1,
+      2
+    ],
+    [
+      "DQ Morelia [g]",
+      24,
+      17,
+      3,
+      1,
+      3,
+      12
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      26,
+      16,
+      3,
+      0,
+      10,
+      4
+    ],
+    [
+      "DQ Aguascalientes Sur [g]",
+      25,
+      14,
+      2,
+      1,
+      0,
+      14
+    ],
+    [
+      "DQ Marcoplaza Tij [g]",
+      47,
+      11,
+      2,
+      0,
+      1,
+      1
+    ],
+    [
+      "DQ Salinas [g]",
+      31,
+      14,
+      2,
+      0,
+      2,
+      9
+    ],
+    [
+      "DQ Ensenada Reforma [g]",
+      33,
+      7,
+      2,
+      0,
+      1,
+      13
+    ],
+    [
+      "DQ Oaxaca [g]",
+      25,
+      6,
+      2,
+      0,
+      0,
+      20
+    ]
+  ],
+  "period": "Abril 2026",
+  "period_long": "01 – 30 Abril 2026",
+  "code": "DA07QUMX",
+  "n_stores": 20,
+  "kbp": 920,
+  "ce": 455,
+  "ce_pct": 49.5,
+  "rc": 336,
+  "rc_pct": 36.5,
+  "co": 129,
+  "co_pct": 14.0,
+  "all_alerts": 934,
+  "svc_avg": "4:03",
+  "ord_avg": "1:40",
+  "queue_avg": "0:56",
+  "recv_avg": "1:33",
+  "del_avg": "1:35",
+  "pct_lt3": 0.4468,
+  "pct_3to5": 0.2659,
+  "pct_gt5": 0.2873,
+  "del_lt2": 0.7365,
+  "del_2to3": 0.0991,
+  "del_gt3": 0.1643,
+  "cash_total": 644,
+  "allstore_total": 227,
+  "delivery_total": 39,
+  "dt_total": 10,
+  "cam_total": 24,
+  "receive_3min": 286,
+  "queue_3": 90,
+  "mobile": 1,
+  "outside": 70,
+  "not_attended": 47,
+  "cash_drawer": 109,
+  "pin_cashier": 21,
+  "receipt_not_given": 19,
+  "receipt_not_printed": 1,
+  "no_cap": 75,
+  "no_uniform": 15,
+  "lost_customer": 10,
+  "open_late": 60,
+  "inactive": 10,
+  "playing": 31,
+  "dirty_floor": 21,
+  "complaining": 1,
+  "close_sooner": 4,
+  "incomplete_fridge": 0,
+  "delivery_wait": 38,
+  "check_packaging": 0,
+  "del_clothes": 1,
+  "pkg_closed": 0,
+  "has_drive_thru": true,
+  "dt_pin": 6,
+  "dt_outside": 2,
+  "dt_cash": 2,
+  "dt_mobile": 0,
+  "dt_receipt": 0,
+  "cam_lost": 21,
+  "cam_blurry": 0,
+  "cam_connect": 0,
+  "cam_obstructed": 3,
+  "cam_lagging": 0,
+  "cam_stores_count": 9,
+  "kbp1_alerts": [
+    [
+      "Receive order >3min",
+      "receive_3min",
+      286
+    ],
+    [
+      "+3 personas en fila",
+      "queue_3",
+      90
+    ],
+    [
+      "Cliente no atendido >1min",
+      "not_attended",
+      47
+    ],
+    [
+      "Dirty floor >3min",
+      "dirty_floor",
+      21
+    ],
+    [
+      "Lost customer",
+      "lost_customer",
+      10
+    ],
+    [
+      "Complaining customer",
+      "complaining",
+      1
+    ]
+  ],
+  "kbp1_all": [
+    [
+      "Receive order >3min",
+      286
+    ],
+    [
+      "+3 personas en fila",
+      90
+    ],
+    [
+      "Cliente no atendido >1min",
+      47
+    ],
+    [
+      "Dirty floor >3min",
+      21
+    ],
+    [
+      "Lost customer",
+      10
+    ],
+    [
+      "Complaining customer",
+      1
+    ]
+  ],
+  "kbp2_alerts": [
+    [
+      "Cash drawer open",
+      "cash_drawer",
+      109
+    ],
+    [
+      "Staff fuera caja >1min",
+      "outside",
+      70
+    ],
+    [
+      "Store open late",
+      "open_late",
+      60
+    ],
+    [
+      "Playing/fighting",
+      "playing",
+      31
+    ],
+    [
+      "PIN pad misuse",
+      "pin_cashier",
+      21
+    ],
+    [
+      "Receipt not given",
+      "receipt_given",
+      19
+    ],
+    [
+      "Staff inactivo >5min",
+      "inactive",
+      10
+    ],
+    [
+      "[D] PIN pad",
+      "dt_pin",
+      6
+    ]
+  ],
+  "kbp2_all": [
+    [
+      "Cash drawer open",
+      109
+    ],
+    [
+      "Staff fuera caja >1min",
+      70
+    ],
+    [
+      "Store open late",
+      60
+    ],
+    [
+      "Playing/fighting",
+      31
+    ],
+    [
+      "PIN pad misuse",
+      21
+    ],
+    [
+      "Receipt not given",
+      19
+    ],
+    [
+      "Staff inactivo >5min",
+      10
+    ],
+    [
+      "[D] PIN pad",
+      6
+    ]
+  ],
+  "kbp3_alerts": [
+    [
+      "Staff sin gorra",
+      "no_cap",
+      75
+    ],
+    [
+      "Delivery guy waiting >1min",
+      "delivery_wait",
+      38
+    ],
+    [
+      "Staff sin uniforme",
+      "no_uniform",
+      15
+    ],
+    [
+      "Delivery man product in clothes",
+      "del_clothes",
+      1
+    ]
+  ],
+  "kbp3_all": [
+    [
+      "Staff sin gorra",
+      75
+    ],
+    [
+      "Delivery guy waiting >1min",
+      38
+    ],
+    [
+      "Staff sin uniforme",
+      15
+    ],
+    [
+      "Delivery man product in clothes",
+      1
+    ]
+  ],
+  "kbp1_store_ranks": {
+    "receive_3min": [
+      [
+        "DQ Marketplace [g]",
+        26
+      ],
+      [
+        "DQ Fresnillo [g]",
+        24
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        21
+      ],
+      [
+        "DQ Nuevo Mexicali [g]",
+        20
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        19
+      ],
+      [
+        "DQ Jurica [g]",
+        18
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        17
+      ],
+      [
+        "DQ La Paz [g]",
+        17
+      ],
+      [
+        "DQ Salinas [g]",
+        17
+      ],
+      [
+        "DQ Oaxaca [g]",
+        15
+      ]
+    ],
+    "queue_3": [
+      [
+        "DQ Marcoplaza Tij [g]",
+        26
+      ],
+      [
+        "DQ Jurica [g]",
+        14
+      ],
+      [
+        "DQ La Paz [g]",
+        10
+      ],
+      [
+        "DQ Esfera [g]",
+        7
+      ],
+      [
+        "DQ Mazatlan Insurgentes [g]",
+        6
+      ],
+      [
+        "DQ Morelia [g]",
+        6
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        5
+      ],
+      [
+        "DQ Fresnillo [g]",
+        5
+      ],
+      [
+        "DQ Puebla [g]",
+        3
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        2
+      ]
+    ],
+    "not_attended": [
+      [
+        "DQ La Paz [g]",
+        12
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        7
+      ],
+      [
+        "DQ Salinas [g]",
+        7
+      ],
+      [
+        "DQ Fresnillo [g]",
+        3
+      ],
+      [
+        "DQ Marketplace [g]",
+        3
+      ],
+      [
+        "DQ Puebla [g]",
+        3
+      ],
+      [
+        "DQ Jurica [g]",
+        2
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        2
+      ],
+      [
+        "DQ Pabellon Reforma [g]",
+        2
+      ],
+      [
+        "DQ Esfera [g]",
+        1
+      ]
+    ],
+    "dirty_floor": [
+      [
+        "DQ Marketplace [g]",
+        5
+      ],
+      [
+        "DQ Salinas [g]",
+        4
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        3
+      ],
+      [
+        "DQ Esfera [g]",
+        3
+      ],
+      [
+        "DQ Fresnillo [g]",
+        2
+      ],
+      [
+        "Las Torres [g]",
+        2
+      ],
+      [
+        "DQ Hampton [g]",
+        1
+      ],
+      [
+        "DQ Nuevo Mexicali [g]",
+        1
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        0
+      ],
+      [
+        "DQ Jurica [g]",
+        0
+      ]
+    ],
+    "lost_customer": [
+      [
+        "Las Torres [g]",
+        2
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        1
+      ],
+      [
+        "DQ Esfera [g]",
+        1
+      ],
+      [
+        "DQ Hampton [g]",
+        1
+      ],
+      [
+        "DQ Jurica [g]",
+        1
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        1
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        1
+      ],
+      [
+        "DQ Pabellon Reforma [g]",
+        1
+      ],
+      [
+        "DQ Salinas [g]",
+        1
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        0
+      ]
+    ],
+    "complaining": [
+      [
+        "DQ La Paz [g]",
+        1
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        0
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        0
+      ],
+      [
+        "DQ Esfera [g]",
+        0
+      ],
+      [
+        "DQ Fresnillo [g]",
+        0
+      ],
+      [
+        "DQ Hampton [g]",
+        0
+      ],
+      [
+        "DQ Jurica [g]",
+        0
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        0
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        0
+      ],
+      [
+        "DQ Marketplace [g]",
+        0
+      ]
+    ]
+  },
+  "kbp2_store_ranks": {
+    "cash_drawer": [
+      [
+        "DQ Mazatlan Insurgentes [g]",
+        21
+      ],
+      [
+        "DQ Puebla [g]",
+        13
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        10
+      ],
+      [
+        "DQ Nuevo Mexicali [g]",
+        8
+      ],
+      [
+        "DQ Oaxaca [g]",
+        7
+      ],
+      [
+        "DQ Fresnillo [g]",
+        6
+      ],
+      [
+        "DQ Hampton [g]",
+        6
+      ],
+      [
+        "DQ Marketplace [g]",
+        6
+      ],
+      [
+        "DQ Salinas [g]",
+        6
+      ],
+      [
+        "DQ Playas [g]",
+        5
+      ]
+    ],
+    "outside": [
+      [
+        "DQ Puebla [g]",
+        14
+      ],
+      [
+        "DQ Mazatlan Insurgentes [g]",
+        11
+      ],
+      [
+        "DQ Pabellon Reforma [g]",
+        8
+      ],
+      [
+        "DQ Jurica [g]",
+        6
+      ],
+      [
+        "DQ Morelia [g]",
+        6
+      ],
+      [
+        "Las Torres [g]",
+        6
+      ],
+      [
+        "DQ Esfera [g]",
+        4
+      ],
+      [
+        "DQ La Paz [g]",
+        4
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        3
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        2
+      ]
+    ],
+    "open_late": [
+      [
+        "DQ Playas [g]",
+        21
+      ],
+      [
+        "DQ Xochimilco [g]",
+        20
+      ],
+      [
+        "DQ Pabellon Reforma [g]",
+        9
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        5
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        2
+      ],
+      [
+        "DQ Marketplace [g]",
+        2
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        1
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        0
+      ],
+      [
+        "DQ Esfera [g]",
+        0
+      ],
+      [
+        "DQ Fresnillo [g]",
+        0
+      ]
+    ],
+    "playing": [
+      [
+        "DQ Aguascalientes Sur [g]",
+        5
+      ],
+      [
+        "DQ Hampton [g]",
+        5
+      ],
+      [
+        "DQ Esfera [g]",
+        4
+      ],
+      [
+        "DQ Jurica [g]",
+        3
+      ],
+      [
+        "DQ Marketplace [g]",
+        3
+      ],
+      [
+        "DQ Morelia [g]",
+        3
+      ],
+      [
+        "DQ Salinas [g]",
+        3
+      ],
+      [
+        "Las Torres [g]",
+        3
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        1
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        1
+      ]
+    ],
+    "pin_cashier": [
+      [
+        "DQ Xochimilco [g]",
+        14
+      ],
+      [
+        "DQ Playas [g]",
+        6
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        1
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        0
+      ],
+      [
+        "DQ Esfera [g]",
+        0
+      ],
+      [
+        "DQ Fresnillo [g]",
+        0
+      ],
+      [
+        "DQ Hampton [g]",
+        0
+      ],
+      [
+        "DQ Jurica [g]",
+        0
+      ],
+      [
+        "DQ La Paz [g]",
+        0
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        0
+      ]
+    ],
+    "receipt_given": [
+      [
+        "DQ Fresnillo [g]",
+        6
+      ],
+      [
+        "DQ Hampton [g]",
+        5
+      ],
+      [
+        "DQ La Paz [g]",
+        5
+      ],
+      [
+        "Las Torres [g]",
+        2
+      ],
+      [
+        "DQ Salinas [g]",
+        1
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        0
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        0
+      ],
+      [
+        "DQ Esfera [g]",
+        0
+      ],
+      [
+        "DQ Jurica [g]",
+        0
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        0
+      ]
+    ],
+    "inactive": [
+      [
+        "DQ Morelia [g]",
+        5
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        2
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        1
+      ],
+      [
+        "DQ Jurica [g]",
+        1
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        1
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        0
+      ],
+      [
+        "DQ Esfera [g]",
+        0
+      ],
+      [
+        "DQ Fresnillo [g]",
+        0
+      ],
+      [
+        "DQ Hampton [g]",
+        0
+      ],
+      [
+        "DQ La Paz [g]",
+        0
+      ]
+    ],
+    "dt_pin": [
+      [
+        "DQ Hampton [g]",
+        2
+      ],
+      [
+        "DQ La Paz [g]",
+        1
+      ],
+      [
+        "DQ Marketplace [g]",
+        1
+      ],
+      [
+        "DQ Playas [g]",
+        1
+      ],
+      [
+        "DQ Xochimilco [g]",
+        1
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        0
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        0
+      ],
+      [
+        "DQ Esfera [g]",
+        0
+      ],
+      [
+        "DQ Fresnillo [g]",
+        0
+      ],
+      [
+        "DQ Jurica [g]",
+        0
+      ]
+    ]
+  },
+  "kbp3_store_ranks": {
+    "no_cap": [
+      [
+        "Las Torres [g]",
+        15
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        9
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        6
+      ],
+      [
+        "DQ Pabellon Reforma [g]",
+        6
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        5
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        4
+      ],
+      [
+        "DQ Jurica [g]",
+        4
+      ],
+      [
+        "DQ Morelia [g]",
+        4
+      ],
+      [
+        "DQ Oaxaca [g]",
+        4
+      ],
+      [
+        "DQ Puebla [g]",
+        4
+      ]
+    ],
+    "delivery_wait": [
+      [
+        "DQ Jurica [g]",
+        5
+      ],
+      [
+        "Las Torres [g]",
+        4
+      ],
+      [
+        "DQ Hampton [g]",
+        3
+      ],
+      [
+        "DQ La Paz [g]",
+        3
+      ],
+      [
+        "DQ Morelia [g]",
+        3
+      ],
+      [
+        "DQ Pabellon Reforma [g]",
+        3
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        2
+      ],
+      [
+        "DQ Fresnillo [g]",
+        2
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        2
+      ],
+      [
+        "DQ Marketplace [g]",
+        2
+      ]
+    ],
+    "no_uniform": [
+      [
+        "DQ Morelia [g]",
+        3
+      ],
+      [
+        "DQ Esfera [g]",
+        2
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        2
+      ],
+      [
+        "DQ Playas [g]",
+        2
+      ],
+      [
+        "DQ Salinas [g]",
+        2
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        1
+      ],
+      [
+        "DQ Jurica [g]",
+        1
+      ],
+      [
+        "DQ Puebla [g]",
+        1
+      ],
+      [
+        "DQ Xochimilco [g]",
+        1
+      ],
+      [
+        "DQ Ensenada Reforma [g]",
+        0
+      ]
+    ],
+    "del_clothes": [
+      [
+        "DQ Ensenada Reforma [g]",
+        1
+      ],
+      [
+        "DQ Aguascalientes Sur [g]",
+        0
+      ],
+      [
+        "DQ Esfera [g]",
+        0
+      ],
+      [
+        "DQ Fresnillo [g]",
+        0
+      ],
+      [
+        "DQ Hampton [g]",
+        0
+      ],
+      [
+        "DQ Jurica [g]",
+        0
+      ],
+      [
+        "DQ La Paz [g]",
+        0
+      ],
+      [
+        "DQ Lopez Mateos [g]",
+        0
+      ],
+      [
+        "DQ Marcoplaza Tij [g]",
+        0
+      ],
+      [
+        "DQ Marketplace [g]",
+        0
+      ]
+    ]
+  },
+  "svc_fast": [
+    [
+      "DQ Playas [g]",
+      "2:21"
+    ],
+    [
+      "DQ Xochimilco [g]",
+      "2:31"
+    ],
+    [
+      "DQ Hampton [g]",
+      "2:48"
+    ]
+  ],
+  "svc_slow": [
+    [
+      "DQ Ensenada Reforma [g]",
+      "5:55"
+    ],
+    [
+      "DQ Fresnillo [g]",
+      "5:22"
+    ],
+    [
+      "DQ La Paz [g]",
+      "5:15"
+    ]
+  ],
+  "ord_fast": [
+    [
+      "DQ Playas [g]",
+      "1:13"
+    ],
+    [
+      "DQ Hampton [g]",
+      "1:14"
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      "1:14"
+    ]
+  ],
+  "ord_slow": [
+    [
+      "DQ Ensenada Reforma [g]",
+      "3:04"
+    ],
+    [
+      "DQ La Paz [g]",
+      "2:04"
+    ],
+    [
+      "DQ Oaxaca [g]",
+      "1:58"
+    ]
+  ],
+  "queue_fast": [
+    [
+      "DQ Playas [g]",
+      "0:28"
+    ],
+    [
+      "DQ Hampton [g]",
+      "0:36"
+    ],
+    [
+      "DQ Oaxaca [g]",
+      "0:37"
+    ]
+  ],
+  "queue_slow": [
+    [
+      "DQ Jurica [g]",
+      "1:13"
+    ],
+    [
+      "DQ Esfera [g]",
+      "1:11"
+    ],
+    [
+      "DQ Marcoplaza Tij [g]",
+      "1:10"
+    ]
+  ],
+  "recv_fast": [
+    [
+      "DQ Xochimilco [g]",
+      "0:39"
+    ],
+    [
+      "DQ Playas [g]",
+      "0:41"
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      "0:51"
+    ]
+  ],
+  "recv_slow": [
+    [
+      "DQ Fresnillo [g]",
+      "2:37"
+    ],
+    [
+      "DQ La Paz [g]",
+      "2:12"
+    ],
+    [
+      "DQ Marketplace [g]",
+      "2:01"
+    ]
+  ],
+  "del_fast": [
+    [
+      "DQ Pabellon Reforma [g]",
+      "0:30"
+    ],
+    [
+      "DQ Playas [g]",
+      "0:45"
+    ],
+    [
+      "DQ La Paz [g]",
+      "0:49"
+    ]
+  ],
+  "del_slow": [
+    [
+      "DQ Esfera [g]",
+      "4:34"
+    ],
+    [
+      "DQ Oaxaca [g]",
+      "2:46"
+    ],
+    [
+      "DQ Ensenada Reforma [g]",
+      "2:46"
+    ]
+  ],
+  "kbp_top10": [
+    [
+      "DQ Marcoplaza Tij [g]",
+      60,
+      6.5
+    ],
+    [
+      "DQ Jurica [g]",
+      56,
+      6.1
+    ],
+    [
+      "DQ La Paz [g]",
+      56,
+      6.1
+    ],
+    [
+      "Las Torres [g]",
+      54,
+      5.9
+    ],
+    [
+      "DQ Mazatlan Insurgentes [g]",
+      52,
+      5.7
+    ],
+    [
+      "DQ Fresnillo [g]",
+      51,
+      5.5
+    ],
+    [
+      "DQ Marketplace [g]",
+      51,
+      5.5
+    ],
+    [
+      "DQ Lopez Mateos [g]",
+      48,
+      5.2
+    ],
+    [
+      "DQ Puebla [g]",
+      48,
+      5.2
+    ],
+    [
+      "DQ Salinas [g]",
+      47,
+      5.1
+    ]
+  ],
+  "all_top10": [
+    [
+      "DQ Marcoplaza Tij [g]",
+      61,
+      6.5
+    ],
+    [
+      "DQ Jurica [g]",
+      57,
+      6.1
+    ],
+    [
+      "DQ La Paz [g]",
+      55,
+      5.9
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      55,
+      5.9
+    ],
+    [
+      "Las Torres [g]",
+      54,
+      5.8
+    ],
+    [
+      "DQ Mazatlan Insurgentes [g]",
+      52,
+      5.6
+    ],
+    [
+      "DQ Marketplace [g]",
+      51,
+      5.5
+    ],
+    [
+      "DQ Fresnillo [g]",
+      50,
+      5.4
+    ],
+    [
+      "DQ Salinas [g]",
+      49,
+      5.2
+    ],
+    [
+      "DQ Puebla [g]",
+      48,
+      5.1
+    ]
+  ],
+  "kbp_worst": [
+    "DQ Marcoplaza Tij [g]",
+    6.5,
+    60
+  ],
+  "kbp_best": [
+    "DQ Oaxaca [g]",
+    3.5,
+    33
+  ],
+  "ce_top10": [
+    [
+      "DQ Marcoplaza Tij [g]",
+      48,
+      10.5
+    ],
+    [
+      "DQ La Paz [g]",
+      40,
+      8.8
+    ],
+    [
+      "DQ Marketplace [g]",
+      36,
+      7.9
+    ],
+    [
+      "DQ Jurica [g]",
+      35,
+      7.7
+    ],
+    [
+      "DQ Fresnillo [g]",
+      34,
+      7.5
+    ],
+    [
+      "DQ Ensenada Reforma [g]",
+      30,
+      6.6
+    ],
+    [
+      "DQ Salinas [g]",
+      29,
+      6.4
+    ],
+    [
+      "DQ Lopez Mateos [g]",
+      24,
+      5.3
+    ],
+    [
+      "DQ Esfera [g]",
+      23,
+      5.1
+    ],
+    [
+      "DQ Nuevo Mexicali [g]",
+      23,
+      5.1
+    ]
+  ],
+  "rc_top10": [
+    [
+      "DQ Xochimilco [g]",
+      38,
+      11.3
+    ],
+    [
+      "DQ Playas [g]",
+      34,
+      10.1
+    ],
+    [
+      "DQ Mazatlan Insurgentes [g]",
+      32,
+      9.5
+    ],
+    [
+      "DQ Puebla [g]",
+      27,
+      8.0
+    ],
+    [
+      "DQ Hampton [g]",
+      20,
+      6.0
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      20,
+      6.0
+    ],
+    [
+      "DQ Morelia [g]",
+      19,
+      5.7
+    ],
+    [
+      "DQ Aguascalientes Sur [g]",
+      18,
+      5.4
+    ],
+    [
+      "Las Torres [g]",
+      16,
+      4.8
+    ],
+    [
+      "DQ Fresnillo [g]",
+      13,
+      3.9
+    ]
+  ],
+  "co_top10": [
+    [
+      "Las Torres [g]",
+      19,
+      14.7
+    ],
+    [
+      "DQ Lopez Mateos [g]",
+      12,
+      9.3
+    ],
+    [
+      "DQ Jurica [g]",
+      10,
+      7.8
+    ],
+    [
+      "DQ Morelia [g]",
+      10,
+      7.8
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      9,
+      7.0
+    ],
+    [
+      "DQ Aguascalientes Sur [g]",
+      8,
+      6.2
+    ],
+    [
+      "DQ Marcoplaza Tij [g]",
+      8,
+      6.2
+    ],
+    [
+      "DQ Salinas [g]",
+      8,
+      6.2
+    ],
+    [
+      "DQ Ensenada Reforma [g]",
+      6,
+      4.7
+    ],
+    [
+      "DQ Oaxaca [g]",
+      6,
+      4.7
+    ]
+  ],
+  "ord_top5_fast": [
+    [
+      "DQ Playas [g]",
+      "1:13"
+    ],
+    [
+      "DQ Hampton [g]",
+      "1:14"
+    ],
+    [
+      "DQ Pabellon Reforma [g]",
+      "1:14"
+    ],
+    [
+      "DQ Xochimilco [g]",
+      "1:18"
+    ],
+    [
+      "DQ Salinas [g]",
+      "1:22"
+    ],
+    [
+      "DQ Mazatlan Insurgentes [g]",
+      "1:27"
+    ],
+    [
+      "DQ Puebla [g]",
+      "1:27"
+    ],
+    [
+      "DQ Nuevo Mexicali [g]",
+      "1:29"
+    ],
+    [
+      "Las Torres [g]",
+      "1:31"
+    ],
+    [
+      "DQ Marcoplaza Tij [g]",
+      "1:32"
+    ]
+  ],
+  "top10_alert_types": [
+    {
+      "label": "Receive order >3min",
+      "val": 286,
+      "pct": 31.1
+    },
+    {
+      "label": "Cash drawer open",
+      "val": 109,
+      "pct": 11.8
+    },
+    {
+      "label": "+3 personas en fila",
+      "val": 90,
+      "pct": 9.8
+    },
+    {
+      "label": "Staff sin gorra",
+      "val": 75,
+      "pct": 8.2
+    },
+    {
+      "label": "Staff fuera caja >1min",
+      "val": 70,
+      "pct": 7.6
+    },
+    {
+      "label": "Store open late",
+      "val": 60,
+      "pct": 6.5
+    },
+    {
+      "label": "Cliente no atendido >1min",
+      "val": 47,
+      "pct": 5.1
+    },
+    {
+      "label": "Delivery guy waiting >1min",
+      "val": 38,
+      "pct": 4.1
+    },
+    {
+      "label": "Playing/fighting",
+      "val": 31,
+      "pct": 3.4
+    },
+    {
+      "label": "Dirty floor >3min",
+      "val": 21,
+      "pct": 2.3
+    }
+  ],
+  "dt_pin_top10": [
+    [
+      "DQ Hampton [g]",
+      2,
+      33.3
+    ],
+    [
+      "DQ La Paz [g]",
+      1,
+      16.7
+    ],
+    [
+      "DQ Marketplace [g]",
+      1,
+      16.7
+    ],
+    [
+      "DQ Playas [g]",
+      1,
+      16.7
+    ],
+    [
+      "DQ Xochimilco [g]",
+      1,
+      16.7
+    ]
+  ],
+  "dt_outside_top10": [
+    [
+      "DQ Aguascalientes Sur [g]",
+      1,
+      50.0
+    ],
+    [
+      "DQ Fresnillo [g]",
+      1,
+      50.0
+    ]
+  ],
+  "dt_cash_top10": [
+    [
+      "DQ Lopez Mateos [g]",
+      1,
+      50.0
+    ],
+    [
+      "DQ Morelia [g]",
+      1,
+      50.0
+    ]
+  ],
+  "dt_mobile_top10": [],
+  "cam_stores": [
+    {
+      "store": "DQ Pabellon Reforma [g]",
+      "cam": 10,
+      "kbp": 45,
+      "all_alerts": 55,
+      "rank": 4
+    },
+    {
+      "store": "DQ Esfera [g]",
+      "cam": 3,
+      "kbp": 37,
+      "all_alerts": 40,
+      "rank": 16
+    },
+    {
+      "store": "DQ Morelia [g]",
+      "cam": 3,
+      "kbp": 45,
+      "all_alerts": 47,
+      "rank": 12
+    },
+    {
+      "store": "DQ Playas [g]",
+      "cam": 2,
+      "kbp": 40,
+      "all_alerts": 41,
+      "rank": 15
+    },
+    {
+      "store": "DQ Salinas [g]",
+      "cam": 2,
+      "kbp": 47,
+      "all_alerts": 49,
+      "rank": 9
+    },
+    {
+      "store": "DQ Ensenada Reforma [g]",
+      "cam": 1,
+      "kbp": 42,
+      "all_alerts": 43,
+      "rank": 13
+    },
+    {
+      "store": "DQ Jurica [g]",
+      "cam": 1,
+      "kbp": 56,
+      "all_alerts": 57,
+      "rank": 2
+    },
+    {
+      "store": "DQ Marcoplaza Tij [g]",
+      "cam": 1,
+      "kbp": 60,
+      "all_alerts": 61,
+      "rank": 1
+    },
+    {
+      "store": "DQ Marketplace [g]",
+      "cam": 1,
+      "kbp": 51,
+      "all_alerts": 51,
+      "rank": 7
+    }
+  ]
+}
