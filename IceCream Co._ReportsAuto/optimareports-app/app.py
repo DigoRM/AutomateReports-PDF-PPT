@@ -23,37 +23,52 @@ def index():
 
 @app.route('/generate', methods=['POST'])
 def generate():
-    # Validações
-    if 'excel' not in request.files:
-        return 'Arquivo Excel não enviado', 400
-
-    file      = request.files['excel']
     franchise = request.form.get('franchise', '')
     period    = request.form.get('period', '')
-    period_long = request.form.get('period_long', f'01 – 30 {period}')
+    period_long = request.form.get('period_long', '')
+    report_type = request.form.get('report_type', 'Mensual')
+
+    # Default values if not specified
+    if not franchise:
+        franchise = 'GammaFranchise'
+    if not period:
+        period = 'Abril 2026'
+    if not period_long:
+        period_long = f'01 – 30 {period}'
 
     if franchise not in FRANCHISES:
         return f'Franquia inválida: {franchise}', 400
 
-    if not file.filename.endswith('.xlsx'):
-        return 'Apenas arquivos .xlsx são aceitos', 400
+    # Check if file was uploaded
+    file_uploaded = False
+    if 'excel' in request.files:
+        file = request.files['excel']
+        if file.filename != '':
+            file_uploaded = True
 
-    # Verificar disponibilidade do mês
-    if period not in AVAILABLE_MONTHS.get(franchise, []):
-        # Aviso mas não bloqueia — pode ser um mês novo
-        pass
-
-    # Salvar temporariamente e parsear
-    tmp = tempfile.NamedTemporaryFile(suffix='.xlsx', delete=False)
-    tmp.close()
-    file.save(tmp.name)
-
-    try:
-        data = parse_franchise(tmp.name, franchise, period, period_long)
-    except Exception as e:
-        return f'Erro ao processar o arquivo: {str(e)}', 500
-    finally:
-        os.unlink(tmp.name)
+    if not file_uploaded:
+        # Fallback to local sample.xlsx
+        sample_path = os.path.join(os.path.dirname(__file__), 'sample.xlsx')
+        if not os.path.exists(sample_path):
+            return 'Arquivo de demonstração não encontrado no servidor', 500
+        try:
+            data = parse_franchise(sample_path, franchise, period, period_long)
+        except Exception as e:
+            return f'Erro ao processar arquivo de demonstração: {str(e)}', 500
+    else:
+        if not file.filename.endswith('.xlsx'):
+            return 'Apenas arquivos .xlsx são aceitos', 400
+        
+        # Save temporarily and parse
+        tmp = tempfile.NamedTemporaryFile(suffix='.xlsx', delete=False)
+        tmp.close()
+        file.save(tmp.name)
+        try:
+            data = parse_franchise(tmp.name, franchise, period, period_long)
+        except Exception as e:
+            return f'Erro ao processar o arquivo: {str(e)}', 500
+        finally:
+            os.unlink(tmp.name)
 
     return render_template(
         'dashboard.html',
@@ -61,6 +76,7 @@ def generate():
         franchise=franchise,
         period=period,
         n_stores=data['n_stores'],
+        report_type=report_type,
     )
 
 @app.route('/export_pdf', methods=['POST'])
@@ -70,6 +86,7 @@ def export_pdf():
     data_json = request.form.get('data_json', '{}')
     n_stores = request.form.get('n_stores', 0)
     theme = request.form.get('theme', 'dark')
+    report_type = request.form.get('report_type', 'Mensual')
     
     # Render the HTML template
     html_content = render_template(
@@ -77,7 +94,8 @@ def export_pdf():
         DATA_JSON=data_json,
         franchise=franchise,
         period=period,
-        n_stores=n_stores
+        n_stores=n_stores,
+        report_type=report_type
     )
     
     # Inject Playwright helper script to make all tabs visible and draw them
@@ -157,6 +175,7 @@ def export_pptx():
     data_json = request.form.get('data_json', '{}')
     n_stores = request.form.get('n_stores', 0)
     theme = request.form.get('theme', 'dark')
+    report_type = request.form.get('report_type', 'Mensual')
     
     # Render the HTML template
     html_content = render_template(
@@ -164,7 +183,8 @@ def export_pptx():
         DATA_JSON=data_json,
         franchise=franchise,
         period=period,
-        n_stores=n_stores
+        n_stores=n_stores,
+        report_type=report_type
     )
     
     # Force pdf-mode class on body

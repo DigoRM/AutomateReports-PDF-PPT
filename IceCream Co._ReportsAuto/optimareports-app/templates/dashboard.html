@@ -383,6 +383,7 @@ body.pdf-mode .speed-rr-val {
   <input type="hidden" name="franchise" value="{{ franchise }}">
   <input type="hidden" name="period" value="{{ period }}">
   <input type="hidden" name="n_stores" value="{{ n_stores }}">
+  <input type="hidden" name="report_type" value="{{ report_type }}">
   <input type="hidden" id="dataJsonInput" name="data_json">
   <input type="hidden" id="themeInput" name="theme" value="dark">
 </form>
@@ -391,7 +392,7 @@ body.pdf-mode .speed-rr-val {
 <div class="topbar">
   <div class="logo">OptimaReports<span>.ai</span></div>
   <div class="top-code">DA07QUMX</div>
-  <div class="top-meta">IceCream Co. México · {{ franchise }} · {{ n_stores }} Tiendas · {{ period }}</div>
+  <div class="top-meta">IceCream Co. México · Reporte {{ report_type }} · {{ franchise }} · {{ n_stores }} Tiendas · {{ period }}</div>
   <div class="topbar-right">
     <div class="top-meta" id="clock"></div>
     <button class="btn-theme" onclick="toggleTheme()" style="background:transparent;border:1px solid var(--border);color:var(--text);border-radius:6px;padding:6px 12px;font-size:12px;font-family:'Syne',sans-serif;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s;"><span id="theme-icon">☀️</span> <span id="theme-text">Claro</span></button>

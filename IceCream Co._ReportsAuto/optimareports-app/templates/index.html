@@ -34,13 +34,26 @@ select:focus,input:focus{border-color:var(--ce);}
 <div class="subtitle">DA07QUMX · IceCream Co. México · Report Generator</div>
 
 <div class="form-card">
-  <div class="form-title">Generar Reporte Mensual</div>
+  <div class="form-title">Generar Reporte</div>
+  <div style="font-size:12px; color:var(--muted); margin-bottom:20px; line-height:1.45;">
+    <strong>💡 Modo Demo Activo:</strong> Si no selecciona ningún archivo, el sistema cargará automáticamente una planilha de demostración real de <strong>GammaFranchise</strong> con datos completos (incluyendo Drive Thru y Delivery).
+  </div>
   <form action="/generate" method="POST" enctype="multipart/form-data" id="reportForm">
 
     <div class="field">
+      <label>Tipo de Reporte</label>
+      <select name="report_type" id="reportTypeSelect">
+        <option value="Semanal">Semanal</option>
+        <option value="Mensual" selected>Mensual</option>
+        <option value="Semestral">Semestral</option>
+        <option value="Anual">Anual</option>
+      </select>
+    </div>
+
+    <div class="field">
       <label>Franquicia</label>
-      <select name="franchise" id="franchiseSelect" required>
-        <option value="">— Seleccionar —</option>
+      <select name="franchise" id="franchiseSelect">
+        <option value="">— Demo (GammaFranchise) —</option>
         {% for f in franchises %}
         <option value="{{ f }}">{{ f }}</option>
         {% endfor %}
@@ -49,18 +62,18 @@ select:focus,input:focus{border-color:var(--ce);}
 
     <div class="field">
       <label>Período</label>
-      <input type="text" name="period" placeholder="Abril 2026" required />
+      <input type="text" name="period" placeholder="Abril 2026 (Dejar vacío para Demo)" />
     </div>
 
     <div class="field">
-      <label>Período completo</label>
-      <input type="text" name="period_long" placeholder="01 – 30 Abril 2026" required />
+      <label>Período completo (específico)</label>
+      <input type="text" name="period_long" placeholder="01 – 30 Abril 2026 (Dejar vacío para Demo)" />
     </div>
 
     <div class="field">
       <label>Archivo Excel (.xlsx)</label>
       <div class="file-area" onclick="document.getElementById('fileInput').click()">
-        <input type="file" id="fileInput" name="excel" accept=".xlsx" required
+        <input type="file" id="fileInput" name="excel" accept=".xlsx"
                onchange="document.getElementById('fileName').textContent=this.files[0]?.name||''">
         <div class="file-label">Clique para seleccionar o <strong>arrastre</strong> el archivo</div>
         <div class="file-name" id="fileName"></div>
