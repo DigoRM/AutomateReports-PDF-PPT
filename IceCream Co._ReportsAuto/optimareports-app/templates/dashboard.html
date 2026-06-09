@@ -440,14 +440,14 @@ body.pdf-mode .speed-rr-val {
 
   <div class="g2">
     <div class="card" style="margin-bottom:0">
-      <div class="card-title">Distribución KBP <span class="card-badge"><span id="kbpTotalLabel"></span> alertas · {{ period }}</span></div>
+      <div class="card-title"><span data-tr="title-dist-kbp">Distribución KBP</span> <span class="card-badge"><span id="kbpTotalLabel"></span> <span data-tr="alertas">alertas</span> · {{ period }}</span></div>
       <div style="display:flex; align-items:center; gap:20px; height:220px;">
         <div style="position:relative; flex:1; height:100%;"><canvas id="cDonut"></canvas></div>
         <div id="cDonutLegend" style="flex:1.2; font-family:'DM Sans',sans-serif;"></div>
       </div>
     </div>
     <div class="card" style="margin-bottom:0">
-      <div class="card-title">Distribución por Área <span class="card-badge">visual</span></div>
+      <div class="card-title"><span data-tr="title-dist-area">Distribución por Área</span> <span class="card-badge" data-tr="label-visual">visual</span></div>
       <div style="display:flex; align-items:center; gap:20px; height:220px;">
         <div style="position:relative; flex:1; height:100%;"><canvas id="cAreaDist"></canvas></div>
         <div id="cAreaDistLegend" style="flex:1.2; font-family:'DM Sans',sans-serif;"></div>
@@ -458,13 +458,13 @@ body.pdf-mode .speed-rr-val {
   <div class="g3" style="margin-top:14px">
     <!-- Column 1: Top 15 Tipos de Alerta -->
     <div class="card" style="margin-bottom:0">
-      <div class="card-title">Top 15 Tipos de Alerta <span class="card-badge">% KBP total</span></div>
+      <div class="card-title"><span data-tr="title-top-alerts">Top 15 Tipos de Alerta</span> <span class="card-badge">% KBP total</span></div>
       <div id="top15tipos"></div>
     </div>
     
     <!-- Column 2: Top 10 Tiendas -->
     <div class="card" style="margin-bottom:0">
-      <div class="card-title">Top 10 Tiendas <span class="card-badge">más alertas</span></div>
+      <div class="card-title"><span data-tr="title-top-stores">Top 10 Tiendas</span> <span class="card-badge" data-tr="label-worst">más alertas</span></div>
       <div id="top10tiendas"></div>
     </div>
     
@@ -472,10 +472,10 @@ body.pdf-mode .speed-rr-val {
     <div style="display:flex; flex-direction:column; gap:14px">
       <!-- Card 1: Desempeño de Tiendas -->
       <div class="card" style="margin-bottom:0; flex:1; display:flex; flex-direction:column; justify-content:center">
-        <div class="card-title" style="margin-bottom:8px">Desempeño de Tiendas (Alertas Totales)</div>
+        <div class="card-title" style="margin-bottom:8px" data-tr="title-performance">Desempeño de Tiendas (Alertas Totales)</div>
         <div style="display:flex;gap:10px;align-items:center;">
           <div style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px 8px;">
-            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">Menos alertas</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px" data-tr="label-best">Menos alertas</div>
             <div style="font-size:12px;font-weight:700;color:var(--bright);margin-bottom:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="bestStoreName">-</div>
             <div style="display:flex;align-items:baseline;gap:6px">
               <div style="font-family:'DM Mono',monospace;font-size:16px;font-weight:700;color:var(--green)"><span id="bestStoreAlertsPct">-</span>%</div>
@@ -483,7 +483,7 @@ body.pdf-mode .speed-rr-val {
             </div>
           </div>
           <div style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px 8px;">
-            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">Más alertas</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px" data-tr="label-worst">Más alertas</div>
             <div style="font-size:12px;font-weight:700;color:var(--bright);margin-bottom:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="worstStoreName">-</div>
             <div style="display:flex;align-items:baseline;gap:6px">
               <div style="font-family:'DM Mono',monospace;font-size:16px;font-weight:700;color:var(--danger)"><span id="worstStoreAlertsPct">-</span>%</div>
@@ -495,15 +495,15 @@ body.pdf-mode .speed-rr-val {
       
       <!-- Card 2: Tiempo de Servicio -->
       <div class="card" style="margin-bottom:0; flex:1; display:flex; flex-direction:column; justify-content:center">
-        <div class="card-title" style="margin-bottom:8px">Tiempo de Servicio</div>
+        <div class="card-title" style="margin-bottom:8px" data-tr="title-svc-time">Tiempo de Servicio</div>
         <div style="display:flex;gap:10px;align-items:center;">
           <div style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px;text-align:center;">
-            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">⚡ Más Rápida</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px" data-tr="label-fastest">⚡ Más Rápida</div>
             <div style="font-size:11px;font-weight:600;color:var(--bright);margin:2px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="bestSvcName">-</div>
             <div style="font-family:'DM Mono',monospace;font-size:16px;font-weight:700;color:var(--green)" id="bestSvcTime">-</div>
           </div>
           <div style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px;text-align:center;">
-            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">🐌 Más Lenta</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px" data-tr="label-slowest">🐌 Más Lenta</div>
             <div style="font-size:11px;font-weight:600;color:var(--bright);margin:2px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="worstSvcName">-</div>
             <div style="font-family:'DM Mono',monospace;font-size:16px;font-weight:700;color:var(--danger)" id="worstSvcTime">-</div>
           </div>
@@ -512,15 +512,15 @@ body.pdf-mode .speed-rr-val {
 
       <!-- Card 3: Delivery Wait -->
       <div class="card" style="margin-bottom:0; flex:1; display:flex; flex-direction:column; justify-content:center">
-        <div class="card-title" style="margin-bottom:8px">Delivery Wait</div>
+        <div class="card-title" style="margin-bottom:8px" data-tr="title-del-wait">Delivery Wait</div>
         <div style="display:flex;gap:10px;align-items:center;">
           <div style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px;text-align:center;">
-            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">⚡ Más Rápida</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px" data-tr="label-fastest">⚡ Más Rápida</div>
             <div style="font-size:11px;font-weight:600;color:var(--bright);margin:2px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="bestDelName">-</div>
             <div style="font-family:'DM Mono',monospace;font-size:16px;font-weight:700;color:var(--green)" id="bestDelTime">-</div>
           </div>
           <div style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px;text-align:center;">
-            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">🐌 Más Lenta</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px" data-tr="label-slowest">🐌 Más Lenta</div>
             <div style="font-size:11px;font-weight:600;color:var(--bright);margin:2px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="worstDelName">-</div>
             <div style="font-family:'DM Mono',monospace;font-size:16px;font-weight:700;color:var(--danger)" id="worstDelTime">-</div>
           </div>
@@ -536,24 +536,24 @@ body.pdf-mode .speed-rr-val {
 <div class="tc" id="tc-rankings">
   <div class="print-only-title">🏆 Rankings KBP</div>
   <div class="g3">
-    <div class="card"><div class="card-title" style="color:var(--ce)">KBP 1 — CE <span class="card-badge">Top 5 Tiendas</span></div><div id="rCE"></div></div>
-    <div class="card"><div class="card-title" style="color:var(--rc)">KBP 2 — RC <span class="card-badge">Top 5 Tiendas</span></div><div id="rRC"></div></div>
-    <div class="card"><div class="card-title" style="color:var(--co)">KBP 3 — CO <span class="card-badge">Top 5 Tiendas</span></div><div id="rCO"></div></div>
+    <div class="card"><div class="card-title" style="color:var(--ce)">KBP 1 — CE <span class="card-badge" data-tr="label-top5-stores">Top 5 Tiendas</span></div><div id="rCE"></div></div>
+    <div class="card"><div class="card-title" style="color:var(--rc)">KBP 2 — RC <span class="card-badge" data-tr="label-top5-stores">Top 5 Tiendas</span></div><div id="rRC"></div></div>
+    <div class="card"><div class="card-title" style="color:var(--co)">KBP 3 — CO <span class="card-badge" data-tr="label-top5-stores">Top 5 Tiendas</span></div><div id="rCO"></div></div>
   </div>
   <!-- Chart Container for Rankings -->
   <div style="width: 100%; margin-bottom: 14px;" id="kbpSingleContainer">
     <div class="card">
-      <div class="card-title">Ranking Geral Stacked por KBP (CE, RC, CO) <span class="card-badge">{{ period }}</span></div>
+      <div class="card-title"><span data-tr="label-ranking-kbp-stacked">Ranking Geral Stacked por KBP (CE, RC, CO)</span> <span class="card-badge">{{ period }}</span></div>
       <div style="position:relative;height:350px"><canvas id="cKBPStacked"></canvas></div>
     </div>
   </div>
   <div style="width: 100%; margin-bottom: 14px; display:none;" id="kbpSplitContainer">
     <div class="card" style="margin-bottom:14px">
-      <div class="card-title" style="color:var(--danger)">Top 10 Peores Tiendas (Mais Alertas KBP) <span class="card-badge">Top 10</span></div>
+      <div class="card-title" style="color:var(--danger)"><span data-tr="label-worst-kbp-stacked">Top 10 Peores Tiendas (Mais Alertas KBP)</span> <span class="card-badge">Top 10</span></div>
       <div style="position:relative;height:200px"><canvas id="cKBPStackedWorst"></canvas></div>
     </div>
     <div class="card" style="margin-bottom:0">
-      <div class="card-title" style="color:var(--green)">Top 10 Mejores Tiendas (Menos Alertas KBP) <span class="card-badge">Top 10</span></div>
+      <div class="card-title" style="color:var(--green)"><span data-tr="label-best-kbp-stacked">Top 10 Mejores Tiendas (Menos Alertas KBP)</span> <span class="card-badge">Top 10</span></div>
       <div style="position:relative;height:200px"><canvas id="cKBPStackedBest"></canvas></div>
     </div>
   </div>
@@ -566,12 +566,12 @@ body.pdf-mode .speed-rr-val {
     <div class="card" style="padding:0;overflow:hidden">
       <div class="area-hdr" style="background:rgba(212,160,23,.1)">
         <span class="area-icon">💰</span>
-        <div class="area-info"><div class="area-name">Caja</div><div class="area-sub">Caja registradora y atención en mostrador</div></div>
+        <div class="area-info"><div class="area-name" data-tr="area-caja">Caja</div><div class="area-sub" data-tr="area-caja-sub">Caja registradora y atención en mostrador</div></div>
         <div class="area-badge" style="background:var(--cashier)" id="bdgCaja">0<small>0.0%</small></div>
       </div>
       <div style="padding:0 15px 8px">
         <table class="tbl" style="margin-top:8px">
-          <thead><tr><th>Alerta</th><th class="r">N</th><th class="r">%</th></tr></thead>
+          <thead><tr><th data-tr="hdr-alert">Alerta</th><th class="r" data-tr="hdr-num">N</th><th class="r" data-tr="hdr-pct">%</th></tr></thead>
           <tbody id="tbCaja"></tbody>
         </table>
       </div>
@@ -579,12 +579,12 @@ body.pdf-mode .speed-rr-val {
     <div class="card" style="padding:0;overflow:hidden">
       <div class="area-hdr" style="background:rgba(192,86,33,.1)">
         <span class="area-icon">🏪</span>
-        <div class="area-info"><div class="area-name">Toda la Tienda</div><div class="area-sub">Comportamientos en toda la tienda</div></div>
+        <div class="area-info"><div class="area-name" data-tr="area-allstore">Toda la Tienda</div><div class="area-sub" data-tr="area-allstore-sub">Comportamientos en toda la tienda</div></div>
         <div class="area-badge" style="background:var(--allstore)" id="bdgAllStore">0<small>0.0%</small></div>
       </div>
       <div style="padding:0 15px 8px">
         <table class="tbl" style="margin-top:8px">
-          <thead><tr><th>Alerta</th><th class="r">N</th><th class="r">%</th></tr></thead>
+          <thead><tr><th data-tr="hdr-alert">Alerta</th><th class="r" data-tr="hdr-num">N</th><th class="r" data-tr="hdr-pct">%</th></tr></thead>
           <tbody id="tbAllStore"></tbody>
         </table>
       </div>
@@ -592,12 +592,12 @@ body.pdf-mode .speed-rr-val {
     <div class="card" style="padding:0;overflow:hidden">
       <div class="area-hdr" style="background:rgba(123,82,171,.1)">
         <span class="area-icon">🏍️</span>
-        <div class="area-info"><div class="area-name">Delivery</div><div class="area-sub">Alertas de repartidores a domicilio</div></div>
+        <div class="area-info"><div class="area-name" data-tr="area-delivery">Delivery</div><div class="area-sub" data-tr="area-delivery-sub">Alertas de repartidores a domicilio</div></div>
         <div class="area-badge" style="background:var(--delivery)" id="bdgDelivery">0<small>0.0%</small></div>
       </div>
       <div style="padding:0 15px 8px">
         <table class="tbl" style="margin-top:8px">
-          <thead><tr><th>Alerta</th><th class="r">N</th><th class="r">%</th></tr></thead>
+          <thead><tr><th data-tr="hdr-alert">Alerta</th><th class="r" data-tr="hdr-num">N</th><th class="r" data-tr="hdr-pct">%</th></tr></thead>
           <tbody id="tbDelivery"></tbody>
         </table>
       </div>
@@ -605,12 +605,12 @@ body.pdf-mode .speed-rr-val {
     <div class="card" style="padding:0;overflow:hidden">
       <div class="area-hdr" style="background:rgba(44,125,160,.1)">
         <span class="area-icon">🚗</span>
-        <div class="area-info"><div class="area-name">Drive Thru</div><div class="area-sub">Alertas exclusivas [D]</div></div>
+        <div class="area-info"><div class="area-name" data-tr="area-drivethru">Drive Thru</div><div class="area-sub" data-tr="area-drivethru-sub">Alertas exclusivas [D]</div></div>
         <div class="area-badge" style="background:var(--drivethru)" id="bdgDriveThru">0<small>0.0%</small></div>
       </div>
       <div style="padding:0 15px 8px">
         <table class="tbl" style="margin-top:8px">
-          <thead><tr><th>Alerta</th><th class="r">N</th><th class="r">%</th></tr></thead>
+          <thead><tr><th data-tr="hdr-alert">Alerta</th><th class="r" data-tr="hdr-num">N</th><th class="r" data-tr="hdr-pct">%</th></tr></thead>
           <tbody id="tbDT"></tbody>
         </table>
       </div>
@@ -619,17 +619,17 @@ body.pdf-mode .speed-rr-val {
   <!-- Chart Container for Areas -->
   <div style="width: 100%; margin-bottom: 14px;" id="areaSingleContainer">
     <div class="card">
-      <div class="card-title">Ranking Geral Stacked por Área <span class="card-badge">{{ period }}</span></div>
+      <div class="card-title"><span data-tr="label-ranking-area-stacked">Ranking Geral Stacked por Área</span> <span class="card-badge">{{ period }}</span></div>
       <div style="position:relative;height:350px"><canvas id="cAreaStacked"></canvas></div>
     </div>
   </div>
   <div style="width: 100%; margin-bottom: 14px; display:none;" id="areaSplitContainer">
     <div class="card" style="margin-bottom:14px">
-      <div class="card-title" style="color:var(--danger)">Top 10 Peores Tiendas (Mais Alertas por Área) <span class="card-badge">Top 10</span></div>
+      <div class="card-title" style="color:var(--danger)"><span data-tr="label-worst-area-stacked">Top 10 Peores Tiendas (Mais Alertas por Área)</span> <span class="card-badge">Top 10</span></div>
       <div style="position:relative;height:200px"><canvas id="cAreaStackedWorst"></canvas></div>
     </div>
     <div class="card" style="margin-bottom:0">
-      <div class="card-title" style="color:var(--green)">Top 10 Mejores Tiendas (Menos Alertas por Área) <span class="card-badge">Top 10</span></div>
+      <div class="card-title" style="color:var(--green)"><span data-tr="label-best-area-stacked">Top 10 Mejores Tiendas (Menos Alertas por Área)</span> <span class="card-badge">Top 10</span></div>
       <div style="position:relative;height:200px"><canvas id="cAreaStackedBest"></canvas></div>
     </div>
   </div>
@@ -651,16 +651,16 @@ body.pdf-mode .speed-rr-val {
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
       <div class="card">
-        <div class="card-title" style="color:var(--ce)">Resumen CE — orden desc</div>
+        <div class="card-title" style="color:var(--ce)" data-tr="Resumen CE — orden desc">Resumen CE — orden desc</div>
         <div id="kbp1Res"></div>
         <div style="background:var(--ce);border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-          <span style="font-size:12px;font-weight:700;color:#fff">TOTAL CE</span>
+          <span style="font-size:12px;font-weight:700;color:#fff" data-tr="Total CE">TOTAL CE</span>
           <span style="font-family:'DM Mono',monospace;font-size:20px;font-weight:700;color:#fff" id="kbp1TotalBox">927</span>
           <span style="font-size:11px;color:rgba(255,255,255,.8)">100%</span>
         </div>
       </div>
       <div class="card">
-        <div class="card-title">Top 10 Tiendas Experiencia del Cliente</div>
+        <div class="card-title" data-tr="Top 10 Tiendas Experiencia del Cliente">Top 10 Tiendas Experiencia del Cliente</div>
         <div style="position:relative;height:280px"><canvas id="cCEStacked"></canvas></div>
       </div>
     </div>
@@ -677,16 +677,16 @@ body.pdf-mode .speed-rr-val {
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
       <div class="card">
-        <div class="card-title" style="color:var(--rc)">Resumen RC — top 8 desc</div>
+        <div class="card-title" style="color:var(--rc)" data-tr="Resumen RC — top 8 desc">Resumen RC — top 8 desc</div>
         <div id="kbp2Res"></div>
         <div style="background:var(--rc);border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-          <span style="font-size:12px;font-weight:700;color:#fff">TOTAL RC</span>
+          <span style="font-size:12px;font-weight:700;color:#fff" data-tr="Total RC">TOTAL RC</span>
           <span style="font-family:'DM Mono',monospace;font-size:20px;font-weight:700;color:#fff" id="kbp2TotalBox">701</span>
           <span style="font-size:11px;color:rgba(255,255,255,.8)">100%</span>
         </div>
       </div>
       <div class="card">
-        <div class="card-title">Top 10 Tiendas Reducción de Costos</div>
+        <div class="card-title" data-tr="Top 10 Tiendas Reducción de Costos">Top 10 Tiendas Reducción de Costos</div>
         <div style="position:relative;height:280px"><canvas id="cRCStacked"></canvas></div>
       </div>
     </div>
@@ -703,16 +703,16 @@ body.pdf-mode .speed-rr-val {
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
       <div class="card">
-        <div class="card-title" style="color:var(--co)">Resumen CO</div>
+        <div class="card-title" style="color:var(--co)" data-tr="Resumen CO">Resumen CO</div>
         <div id="kbp3Res"></div>
         <div style="background:var(--co);border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-          <span style="font-size:12px;font-weight:700;color:#fff">TOTAL CO</span>
+          <span style="font-size:12px;font-weight:700;color:#fff" data-tr="Total CO">TOTAL CO</span>
           <span style="font-family:'DM Mono',monospace;font-size:20px;font-weight:700;color:#fff" id="kbp3TotalBox">331</span>
           <span style="font-size:11px;color:rgba(255,255,255,.8)">100%</span>
         </div>
       </div>
       <div class="card">
-        <div class="card-title">Top 10 Tiendas Conformidad Operacional</div>
+        <div class="card-title" data-tr="Top 10 Tiendas Conformidad Operacional">Top 10 Tiendas Conformidad Operacional</div>
         <div style="position:relative;height:280px"><canvas id="cCOStacked"></canvas></div>
       </div>
     </div>
@@ -726,13 +726,13 @@ body.pdf-mode .speed-rr-val {
     <div style="display:flex;flex-direction:column;gap:14px;">
       <div class="ins" id="delInsight" style="margin-bottom:0;"></div>
       <div class="card" style="margin-bottom:0;">
-        <div class="card-title">Promedio de Espera en Delivery <span class="card-badge">alertas de espera</span></div>
+        <div class="card-title"><span data-tr="title-del-wait-detail">Promedio de Espera en Delivery</span> <span class="card-badge" data-tr="label-alertas-espera">alertas de espera</span></div>
         <div style="display:flex;align-items:flex-end;gap:16px;margin-bottom:12px">
           <div style="font-family:'DM Mono',monospace;font-size:42px;font-weight:700;color:var(--delivery);line-height:1" id="delAvgLabel"></div>
           <div style="padding-bottom:4px"><div style="font-size:11px;color:var(--muted)">min · promedio del grupo</div></div>
         </div>
         <table class="tbl" style="font-size:11px;">
-          <thead><tr><th>Alerta</th><th class="r">N</th><th class="r">%</th></tr></thead>
+          <thead><tr><th data-tr="hdr-alert">Alerta</th><th class="r" data-tr="hdr-num">N</th><th class="r" data-tr="hdr-pct">%</th></tr></thead>
           <tbody>
             <tr><td>Repartidor esperando &gt;1min</td><td class="r" style="color:var(--delivery)" id="delWaitLabel"></td><td class="r" id="delWaitPctLabel"></td></tr>
             <tr><td>Verificar empaque</td><td class="r" style="color:var(--delivery)" id="delPkgLabel"></td><td class="r" id="delPkgPctLabel"></td></tr>
@@ -742,7 +742,7 @@ body.pdf-mode .speed-rr-val {
         </table>
       </div>
       <div class="card" style="margin-bottom:0;">
-        <div class="card-title">Distribución Delivery <span class="card-badge">visual</span></div>
+        <div class="card-title"><span data-tr="title-del-dist">Distribución Delivery</span> <span class="card-badge" data-tr="label-visual">visual</span></div>
         <div style="position:relative;height:210px"><canvas id="cDelDist"></canvas></div>
       </div>
     </div>
@@ -750,25 +750,25 @@ body.pdf-mode .speed-rr-val {
       <div id="delSingleContainer" style="width:100%;">
         <div class="card" style="padding:0;overflow:hidden;margin-bottom:0;">
           <div style="background:var(--delivery);padding:10px 15px">
-            <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;font-weight:700">Ranking de Tiendas - Tiempo de Delivery</div>
+            <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;font-weight:700" data-tr="Ranking de Tiendas - Tiempo de Delivery">Ranking de Tiendas - Tiempo de Delivery</div>
           </div>
-          <div class="cam-hdr" style="grid-template-columns:2fr 1fr 1fr 1fr;"><span>Tienda</span><span class="ctr">Tiempo de Delivery</span><span class="ctr">Total Alertas Delivery</span><span class="ctr">% Alertas Delivery</span></div>
+          <div class="cam-hdr" style="grid-template-columns:2fr 1fr 1fr 1fr;"><span data-tr="hdr-store">Tienda</span><span class="ctr" data-tr="Tiempo de Delivery">Tiempo de Delivery</span><span class="ctr" data-tr="Total Alertas Delivery">Total Alertas Delivery</span><span class="ctr" data-tr="% Alertas Delivery">% Alertas Delivery</span></div>
           <div id="delRows"></div>
         </div>
       </div>
       <div id="delSplitContainer" style="width:100%; display:none; display:flex; flex-direction:column; gap:14px;">
         <div class="card" style="padding:0;overflow:hidden;margin-bottom:0;">
           <div style="background:var(--green);padding:10px 15px">
-            <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;font-weight:700">Top 10 Mejores Tiendas (Más Rápidas) - Tiempo de Delivery</div>
+            <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;font-weight:700" data-tr="Top 10 Mejores Tiendas (Mais Rápidas) - Tiempo de Delivery">Top 10 Mejores Tiendas (Más Rápidas) - Tiempo de Delivery</div>
           </div>
-          <div class="cam-hdr" style="grid-template-columns:2fr 1fr 1fr 1fr;"><span>Tienda</span><span class="ctr">Tiempo de Delivery</span><span class="ctr">Total Alertas Delivery</span><span class="ctr">% Alertas Delivery</span></div>
+          <div class="cam-hdr" style="grid-template-columns:2fr 1fr 1fr 1fr;"><span data-tr="hdr-store">Tienda</span><span class="ctr" data-tr="Tiempo de Delivery">Tiempo de Delivery</span><span class="ctr" data-tr="Total Alertas Delivery">Total Alertas Delivery</span><span class="ctr" data-tr="% Alertas Delivery">% Alertas Delivery</span></div>
           <div id="delBestRows"></div>
         </div>
         <div class="card" style="padding:0;overflow:hidden;margin-bottom:0;">
           <div style="background:var(--danger);padding:10px 15px">
-            <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;font-weight:700">Top 10 Peores Tiendas (Más Lentas) - Tiempo de Delivery</div>
+            <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;font-weight:700" data-tr="Top 10 Peores Tiendas (Mais Lentas) - Tiempo de Delivery">Top 10 Peores Tiendas (Más Lentas) - Tiempo de Delivery</div>
           </div>
-          <div class="cam-hdr" style="grid-template-columns:2fr 1fr 1fr 1fr;"><span>Tienda</span><span class="ctr">Tiempo de Delivery</span><span class="ctr">Total Alertas Delivery</span><span class="ctr">% Alertas Delivery</span></div>
+          <div class="cam-hdr" style="grid-template-columns:2fr 1fr 1fr 1fr;"><span data-tr="hdr-store">Tienda</span><span class="ctr" data-tr="Tiempo de Delivery">Tiempo de Delivery</span><span class="ctr" data-tr="Total Alertas Delivery">Total Alertas Delivery</span><span class="ctr" data-tr="% Alertas Delivery">% Alertas Delivery</span></div>
           <div id="delWorstRows"></div>
         </div>
       </div>
@@ -782,9 +782,9 @@ body.pdf-mode .speed-rr-val {
   <div class="g4" id="dtPanels"></div>
   <div class="card" style="padding:0;overflow:hidden">
     <div style="background:var(--drivethru);padding:10px 15px">
-      <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;font-weight:700">Ranking de Tiendas con Alertas Drive Thru</div>
+      <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;font-weight:700" data-tr="Ranking de Tiendas con Alertas Drive Thru">Ranking de Tiendas con Alertas Drive Thru</div>
     </div>
-    <div class="cam-hdr" style="grid-template-columns:2fr 1fr 1fr 1fr;"><span>Tienda</span><span class="ctr">Total Alertas DT</span><span class="ctr">Alertas de la Tienda</span><span class="ctr">% DT</span></div>
+    <div class="cam-hdr" style="grid-template-columns:2fr 1fr 1fr 1fr;"><span data-tr="hdr-store">Tienda</span><span class="ctr" data-tr="Total Alertas DT">Total Alertas DT</span><span class="ctr" data-tr="Alertas de la Tienda">Alertas de la Tienda</span><span class="ctr" data-tr="% DT">% DT</span></div>
     <div id="dtRows"></div>
   </div>
 </div>
@@ -797,26 +797,26 @@ body.pdf-mode .speed-rr-val {
     <div style="display:flex;flex-direction:column;gap:14px">
       <div class="card" style="text-align:center">
         <div style="font-family:'DM Mono',monospace;font-size:68px;font-weight:700;color:var(--cam);line-height:1" id="camTotalLabel">0</div>
-        <div style="font-size:13px;color:var(--text);margin-top:6px">alertas Cam Check totales</div>
+        <div style="font-size:13px;color:var(--text);margin-top:6px" data-tr="alertas Cam Check totales">alertas Cam Check totales</div>
         <div style="font-size:12px;color:var(--muted);font-style:italic;margin-top:3px" id="camStoresLabel">0 tiendas afectadas</div>
       </div>
       <div class="card">
-        <div class="card-title">Tipos de fallo</div>
+        <div class="card-title" data-tr="Tipos de fallo">Tipos de fallo</div>
         <div id="camBars"></div></div>
       <div class="card">
-        <div class="card-title">Cam Check — visual</div>
+        <div class="card-title" data-tr="Cam Check — visual">Cam Check — visual</div>
         <div style="position:relative;height:150px"><canvas id="cCam"></canvas></div>
       </div>
       <div class="warn-box">
-        <div class="warn-title">⚠️ Interpretación de Datos</div>
-        <div class="warn-text">Tiendas con fallos de cámara pueden mostrar <strong>menos alertas KBP</strong>. Esto NO necesariamente indica un mejor desempeño — los datos son incompletos y deben contextualizarse al evaluar rankings.</div>
+        <div class="warn-title" data-tr="label-camcheck-warn-title">⚠️ Interpretación de Datos</div>
+        <div class="warn-text" data-tr="label-camcheck-warn-text">Tiendas con fallos de cámara pueden mostrar <strong>menos alertas KBP</strong>. Esto NO necesariamente indica un mejor desempeño — los datos son incompletos y deben contextualizarse al evaluar rankings.</div>
       </div>
     </div>
     <div class="card" style="padding:0;overflow:hidden;margin-bottom:0">
       <div style="background:var(--cam);padding:10px 15px">
-        <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#0A0F1A;font-weight:700">Tiendas con Alertas Cam Check — Posición en Ranking General</div>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#0A0F1A;font-weight:700" data-tr="Tiendas con Alertas Cam Check — Posición en Ranking General">Tiendas con Alertas Cam Check — Posición en Ranking General</div>
       </div>
-      <div class="cam-hdr"><span>Tienda</span><span class="ctr">Cam</span><span class="ctr">KBP</span><span class="ctr">Totales</span><span class="ctr">Ranking</span><span class="ctr">Análisis</span></div>
+      <div class="cam-hdr"><span data-tr="hdr-store">Tienda</span><span class="ctr" data-tr="Cam Check">Cam</span><span class="ctr">KBP</span><span class="ctr" data-tr="alertas totales">Totales</span><span class="ctr" data-tr="Ranking">Ranking</span><span class="ctr" data-tr="label-camcheck-analysis">Análisis</span></div>
       <div id="camRows"></div>
     </div>
   </div>
@@ -973,7 +973,70 @@ const DB_L = {
     'Cam Check': 'Cam Check',
     'Experiencia del Cliente': 'Experiencia del Cliente',
     'Reducción de Costos': 'Reducción de Costos',
-    'Conformidad Operacional': 'Conformidad Operacional'
+    'Conformidad Operacional': 'Conformidad Operacional',
+    'Total KBP': 'Total KBP',
+    'del KBP': 'del KBP',
+    'tiendas afect.': 'tiendas afectadas',
+    'promedio grupo': 'promedio grupo',
+    'Tiempo de Fila': 'Tiempo de Fila',
+    'Tiempo de Orden': 'Tiempo de Orden',
+    'Tiempo de Recepción': 'Tiempo de Recepción',
+    'Tiempo de Servicio': 'Tiempo de Servicio',
+    'Tiempo de Delivery': 'Tiempo de Delivery',
+    'alertas': 'alertas',
+    'alertas totales': 'alertas totales',
+    'Total CE': 'TOTAL CE',
+    'Total RC': 'TOTAL RC',
+    'Total CO': 'TOTAL CO',
+    'PEORES TIENDAS (MÁS ALERTAS)': 'PEORES TIENDAS (MÁS ALERTAS)',
+    'MEJORES TIENDAS (MENOS ALERTAS)': 'MEJORES TIENDAS (MENOS ALERTAS)',
+    'Ranking de Tiendas - Tiempo de Delivery': 'Ranking de Tiendas - Tiempo de Delivery',
+    'Top 10 Mejores Tiendas (Mais Rápidas) - Tiempo de Delivery': 'Top 10 Mejores Tiendas (Más Rápidas) - Tiempo de Delivery',
+    'Top 10 Peores Tiendas (Mais Lentas) - Tiempo de Delivery': 'Top 10 Peores Tiendas (Más Lentas) - Tiempo de Delivery',
+    'Ranking de Tiendas con Alertas Drive Thru': 'Ranking de Tiendas con Alertas Drive Thru',
+    'Tiendas con Alertas Cam Check — Posición en Ranking General': 'Tiendas con Alertas Cam Check — Posición en Ranking General',
+    'label-worst-kbp-stacked': 'Top 10 Peores Tiendas (Más Alertas KBP)',
+    'label-best-kbp-stacked': 'Top 10 Mejores Tiendas (Menos Alertas KBP)',
+    'label-worst-area-stacked': 'Top 10 Peores Tiendas (Más Alertas por Área)',
+    'label-best-area-stacked': 'Top 10 Mejores Tiendas (Menos Alertas por Área)',
+    'label-top5-stores': 'Top 5 Tiendas',
+    'label-alertas-espera': 'alertas de espera',
+    'title-del-wait-detail': 'Promedio de Espera en Delivery',
+    'title-del-dist': 'Distribución Delivery',
+    'label-camcheck-affected-stores': '{{ count }} tiendas afectadas de {{ total }}',
+    'Revisar': 'Revisar',
+    'Monit.': 'Monitorear',
+    'Insight': 'Insight',
+    'Mejor': 'Mejor',
+    'Peor': 'Peor',
+    'supera los 3 minutos de espera': 'supera los 3 minutos de espera',
+    'registró': 'registró',
+    'alertas Drive Thru': 'alertas Drive Thru',
+    'en': 'en',
+    'Las estaciones operaron sin incidencias detectadas.': 'Las estaciones operaron sin incidencias detectadas.',
+    'Sin alertas Drive Thru en este período': 'Sin alertas Drive Thru en este período',
+    'Esta franquicia no registró incidencias en estaciones Drive Thru.': 'Esta franquicia no registró incidencias en estaciones Drive Thru.',
+    '[D] Staff usando PIN pad': '[D] Personal usando PIN pad',
+    '[D] Staff fuera caja >1min': '[D] Personal fuera de caja >1min',
+    '[D] Cash drawer open': '[D] Cajón de dinero abierto',
+    '[D] Staff móvil/calc': '[D] Personal móvil',
+    'Sin alertas en este período': 'Sin alertas en este período',
+    'Resumen CE — orden desc': 'Resumen CE',
+    'Resumen RC — top 8 desc': 'Resumen RC',
+    'Resumen CO': 'Resumen CO',
+    'Top 10 Tiendas Experiencia del Cliente': 'Top 10 Tiendas Experiencia del Cliente',
+    'Top 10 Tiendas Reducción de Costos': 'Top 10 Tiendas Reducción de Costos',
+    'Top 10 Tiendas Conformidad Operacional': 'Top 10 Tiendas Conformidad Operacional',
+    'Total Alertas Delivery': 'Total Alertas Delivery',
+    '% Alertas Delivery': '% Alertas Delivery',
+    'Total Alertas DT': 'Total Alertas DT',
+    'Alertas de la Tienda': 'Alertas de la Tienda',
+    '% DT': '% DT',
+    'alertas Cam Check totales': 'alertas Cam Check totales',
+    'tiendas afectadas': 'tiendas afectadas',
+    'Tipos de fallo': 'Tipos de fallo',
+    'Cam Check — visual': 'Cam Check — visual',
+
   },
   pt: {
     // Topbar
@@ -1089,7 +1152,70 @@ const DB_L = {
     'Cam Check': 'Cam Check',
     'Experiencia del Cliente': 'Experiência do Cliente',
     'Reducción de Costos': 'Redução de Custos',
-    'Conformidad Operacional': 'Conformidade Operacional'
+    'Conformidad Operacional': 'Conformidade Operacional',
+    'Total KBP': 'Total KBP',
+    'del KBP': 'do KBP',
+    'tiendas afect.': 'lojas afetadas',
+    'promedio grupo': 'média do grupo',
+    'Tiempo de Fila': 'Tempo de Fila',
+    'Tiempo de Orden': 'Tempo de Pedido',
+    'Tiempo de Recepción': 'Tempo de Entrega (Recepção)',
+    'Tiempo de Servicio': 'Tempo de Serviço',
+    'Tiempo de Delivery': 'Tempo de Delivery',
+    'alertas': 'alertas',
+    'alertas totales': 'alertas totais',
+    'Total CE': 'TOTAL CE',
+    'Total RC': 'TOTAL RC',
+    'Total CO': 'TOTAL CO',
+    'PEORES TIENDAS (MÁS ALERTAS)': 'PIORES LOJAS (MAIS ALERTAS)',
+    'MEJORES TIENDAS (MENOS ALERTAS)': 'MELHORES LOJAS (MENOS ALERTAS)',
+    'Ranking de Tiendas - Tiempo de Delivery': 'Ranking de Lojas - Tempo de Delivery',
+    'Top 10 Mejores Tiendas (Más Rápidas) - Tiempo de Delivery': 'Top 10 Melhores Lojas (Mais Rápidas) - Tempo de Delivery',
+    'Top 10 Peores Tiendas (Mais Lentas) - Tiempo de Delivery': 'Top 10 Piores Lojas (Mais Lentas) - Tempo de Delivery',
+    'Ranking de Tiendas con Alertas Drive Thru': 'Ranking de Lojas com Alertas Drive Thru',
+    'Tiendas con Alertas Cam Check — Posición en Ranking General': 'Lojas com Alertas Cam Check — Posição no Ranking Geral',
+    'label-worst-kbp-stacked': 'Top 10 Piores Lojas (Mais Alertas KBP)',
+    'label-best-kbp-stacked': 'Top 10 Melhores Lojas (Menos Alertas KBP)',
+    'label-worst-area-stacked': 'Top 10 Piores Lojas (Mais Alertas por Área)',
+    'label-best-area-stacked': 'Top 10 Melhores Lojas (Menos Alertas por Área)',
+    'label-top5-stores': 'Top 5 Lojas',
+    'label-alertas-espera': 'alertas de espera',
+    'title-del-wait-detail': 'Média de Espera no Delivery',
+    'title-del-dist': 'Distribuição Delivery',
+    'label-camcheck-affected-stores': '{{ count }} lojas afetadas de {{ total }}',
+    'Revisar': 'Revisar',
+    'Monit.': 'Monitorar',
+    'Insight': 'Insight',
+    'Mejor': 'Melhor',
+    'Peor': 'Pior',
+    'supera los 3 minutos de espera': 'supera os 3 minutos de espera',
+    'registró': 'registrou',
+    'alertas Drive Thru': 'alertas Drive Thru',
+    'en': 'em',
+    'Las estaciones operaron sin incidencias detectadas.': 'As estações operaram sem incidentes detectados.',
+    'Sin alertas Drive Thru en este período': 'Sem alertas Drive Thru neste período',
+    'Esta franquicia no registró incidencias en estaciones Drive Thru.': 'Esta franquia não registrou incidentes em estações Drive Thru.',
+    '[D] Staff usando PIN pad': '[D] Funcionário usando PIN pad',
+    '[D] Staff fuera caja >1min': '[D] Funcionário fora do caixa >1min',
+    '[D] Cash drawer open': '[D] Gaveta de dinheiro aberta',
+    '[D] Staff móvil/calc': '[D] Funcionário no celular',
+    'Sin alertas en este período': 'Sem alertas neste período',
+    'Resumen CE — orden desc': 'Resumo CE',
+    'Resumen RC — top 8 desc': 'Resumo RC',
+    'Resumen CO': 'Resumo CO',
+    'Top 10 Tiendas Experiencia del Cliente': 'Top 10 Lojas Experiência do Cliente',
+    'Top 10 Tiendas Reducción de Costos': 'Top 10 Lojas Redução de Custos',
+    'Top 10 Tiendas Conformidad Operacional': 'Top 10 Lojas Conformidade Operacional',
+    'Total Alertas Delivery': 'Total Alertas Delivery',
+    '% Alertas Delivery': '% Alertas Delivery',
+    'Total Alertas DT': 'Total Alertas DT',
+    'Alertas de la Tienda': 'Alertas da Loja',
+    '% DT': '% DT',
+    'alertas Cam Check totales': 'alertas Cam Check totais',
+    'tiendas afectadas': 'lojas afetadas',
+    'Tipos de fallo': 'Tipos de falha',
+    'Cam Check — visual': 'Cam Check — visual',
+
   },
   en: {
     // Topbar
@@ -1205,7 +1331,70 @@ const DB_L = {
     'Cam Check': 'Cam Check',
     'Experiencia del Cliente': 'Customer Experience',
     'Reducción de Costos': 'Reduce Costs',
-    'Conformidad Operacional': 'Operational Compliance'
+    'Conformidad Operacional': 'Operational Compliance',
+    'Total KBP': 'Total KBP',
+    'del KBP': 'of KBP',
+    'tiendas afect.': 'affected stores',
+    'promedio grupo': 'group average',
+    'Tiempo de Fila': 'Queue Time',
+    'Tiempo de Orden': 'Ordering Time',
+    'Tiempo de Recepción': 'Receiving Time',
+    'Tiempo de Servicio': 'Service Time',
+    'Tiempo de Delivery': 'Delivery Time',
+    'alertas': 'alerts',
+    'alertas totales': 'total alerts',
+    'Total CE': 'TOTAL CE',
+    'Total RC': 'TOTAL RC',
+    'Total CO': 'TOTAL CO',
+    'PEORES TIENDAS (MÁS ALERTAS)': 'WORST STORES (MORE ALERTS)',
+    'MEJORES TIENDAS (MENOS ALERTAS)': 'BEST STORES (FEWER ALERTS)',
+    'Ranking de Tiendas - Tiempo de Delivery': 'Store Ranking - Delivery Time',
+    'Top 10 Mejores Tiendas (Mais Rápidas) - Tiempo de Delivery': 'Top 10 Best Stores (Fastest) - Delivery Time',
+    'Top 10 Peores Tiendas (Mais Lentas) - Tiempo de Delivery': 'Top 10 Worst Stores (Slowest) - Delivery Time',
+    'Ranking de Tiendas con Alertas Drive Thru': 'Store Ranking with Drive Thru Alerts',
+    'Tiendas con Alertas Cam Check — Posición en Ranking General': 'Stores with Cam Check Alerts — General Ranking Position',
+    'label-worst-kbp-stacked': 'Top 10 Worst Stores (More KBP Alerts)',
+    'label-best-kbp-stacked': 'Top 10 Best Stores (Fewer KBP Alerts)',
+    'label-worst-area-stacked': 'Top 10 Worst Stores (More Alerts by Area)',
+    'label-best-area-stacked': 'Top 10 Best Stores (Fewer Alerts by Area)',
+    'label-top5-stores': 'Top 5 Stores',
+    'label-alertas-espera': 'waiting alerts',
+    'title-del-wait-detail': 'Average Delivery Wait Time',
+    'title-del-dist': 'Delivery Distribution',
+    'label-camcheck-affected-stores': '{{ count }} affected stores out of {{ total }}',
+    'Revisar': 'Review',
+    'Monit.': 'Monitor',
+    'Insight': 'Insight',
+    'Mejor': 'Best',
+    'Peor': 'Worst',
+    'supera los 3 minutos de espera': 'exceeds 3 minutes wait time',
+    'registró': 'registered',
+    'alertas Drive Thru': 'Drive Thru alerts',
+    'en': 'in',
+    'Las estaciones operaron sin incidencias detectadas.': 'Stations operated with no issues detected.',
+    'Sin alertas Drive Thru en este período': 'No Drive Thru alerts in this period',
+    'Esta franquicia no registró incidencias en estaciones Drive Thru.': 'This franchise did not register incidents in Drive Thru stations.',
+    '[D] Staff usando PIN pad': '[D] Staff using PIN pad',
+    '[D] Staff fuera caja >1min': '[D] Staff away from cash register >1min',
+    '[D] Cash drawer open': '[D] Cash drawer open',
+    '[D] Staff móvil/calc': '[D] Staff using mobile phone',
+    'Sin alertas en este período': 'No alerts in this period',
+    'Resumen CE — orden desc': 'CE Summary',
+    'Resumen RC — top 8 desc': 'RC Summary',
+    'Resumen CO': 'CO Summary',
+    'Top 10 Tiendas Experiencia del Cliente': 'Top 10 Stores - Customer Experience',
+    'Top 10 Tiendas Reducción de Costos': 'Top 10 Stores - Reduce Costs',
+    'Top 10 Tiendas Conformidad Operacional': 'Top 10 Stores - Operational Compliance',
+    'Total Alertas Delivery': 'Total Delivery Alerts',
+    '% Alertas Delivery': 'Delivery Alerts %',
+    'Total Alertas DT': 'Total DT Alerts',
+    'Alertas de la Tienda': 'Store Alerts',
+    '% DT': 'DT %',
+    'alertas Cam Check totales': 'total Cam Check alerts',
+    'tiendas afectadas': 'affected stores',
+    'Tipos de fallo': 'Failure types',
+    'Cam Check — visual': 'Cam Check — visual',
+
   }
 };
 
@@ -1237,6 +1426,45 @@ function changeDashboardLang(lang) {
   
   const serverPptxBtn = document.querySelector('.btn-pptx');
   if (serverPptxBtn) serverPptxBtn.textContent = DB_L[lang]['btn-pptx-server'];
+
+  // Translate tab buttons
+  const tabsList = ['resumen', 'rankings', 'areas', 'velocidad', 'kbp1', 'kbp2', 'kbp3', 'delivery', 'drivethru', 'camcheck'];
+  document.querySelectorAll('.tabs-bar .tab').forEach((tabEl, idx) => {
+    const tId = tabsList[idx];
+    if (tId && DB_L[lang]['tab-' + tId]) {
+      tabEl.innerHTML = DB_L[lang]['tab-' + tId];
+    }
+  });
+
+  // Translate print-only-titles
+  document.querySelectorAll('.tc').forEach(tcEl => {
+      const tcId = tcEl.id.replace('tc-', '');
+      const printTitle = tcEl.querySelector('.print-only-title');
+      if (printTitle && DB_L[lang]['tab-' + tcId]) {
+          printTitle.innerHTML = DB_L[lang]['tab-' + tcId];
+      }
+  });
+
+  // Translate all data-tr elements
+  document.querySelectorAll('[data-tr]').forEach(el => {
+    const key = el.getAttribute('data-tr');
+    if (DB_L[lang][key]) {
+      el.innerHTML = DB_L[lang][key];
+    }
+  });
+
+  // Translate theme button text
+  const themeTextEl = document.getElementById('theme-text');
+  if (themeTextEl) {
+    const isLight = document.body.classList.contains('light-theme');
+    themeTextEl.textContent = isLight ? (lang === 'en' ? 'Light' : lang === 'pt' ? 'Claro' : 'Claro') : (lang === 'en' ? 'Dark' : lang === 'pt' ? 'Escuro' : 'Oscuro');
+  }
+
+  // Update clock title if exists
+  const clockEl = document.getElementById('clock');
+  if (clockEl && DB_L[lang]['clock']) {
+    // Just keep standard clock
+  }
   
   // Re-run standard tab switcher to repaint charts and lists under the selected language
   drawTab(activeTab);
@@ -1354,11 +1582,11 @@ function drawTab(id) {
 function drawResumen() {
   // KPI strip row 1 (Alerts & KBPs)
   document.getElementById('kpiMainAlerts').innerHTML = [
-      {l:'Total KBP',v:fmt(D.kbp),s:'alertas · {{ period }}',c:'var(--kbp-purple)'},
-      {l:'Experiencia del Cliente',v:fmt(D.ce),s:D.ce_pct+'% del KBP',c:'var(--ce)'},
-      {l:'Reducción de Costos',v:fmt(D.rc),s:D.rc_pct+'% del KBP',c:'var(--rc)'},
-      {l:'Conformidad Operacional',v:fmt(D.co),s:D.co_pct+'% del KBP',c:'var(--co)'},
-      {l:'Cam Check',v:fmt(D.cam_total),s:D.cam_stores_count+' tiendas afect.',c:'var(--cam)'},
+      {l:tr('Total KBP'),v:fmt(D.kbp),s:tr('alertas') + ' · ' + D.period,c:'var(--kbp-purple)'},
+      {l:tr('Experiencia del Cliente'),v:fmt(D.ce),s:D.ce_pct+'% ' + tr('del KBP'),c:'var(--ce)'},
+      {l:tr('Reducción de Costos'),v:fmt(D.rc),s:D.rc_pct+'% ' + tr('del KBP'),c:'var(--rc)'},
+      {l:tr('Conformidad Operacional'),v:fmt(D.co),s:D.co_pct+'% ' + tr('del KBP'),c:'var(--co)'},
+      {l:tr('Cam Check'),v:fmt(D.cam_total),s:D.cam_stores_count+' ' + tr('tiendas afect.'),c:'var(--cam)'},
     ].map(k=>`<div class="kpi" style="--kc:${k.c}"><div class="kpi-label">${k.l}</div><div class="kpi-val" style="color:${k.c}">${k.v}</div><div class="kpi-sub">${k.s}</div></div>`).join('');
 
   // KPI strip row 2 (Tiempo de Servicios)
@@ -1412,10 +1640,10 @@ function drawResumen() {
         const kw = D.kbp_worst || ['-', '-', '-'];
         document.getElementById('bestStoreName').textContent = sn(kb[0]);
         document.getElementById('bestStoreAlertsPct').textContent = kb[1];
-        document.getElementById('bestStoreAlerts').innerHTML = `<strong>${kb[2]}</strong> alertas totales`;
+        document.getElementById('bestStoreAlerts').innerHTML = `<strong>${kb[2]}</strong> ` + tr('alertas totales');
         document.getElementById('worstStoreName').textContent = sn(kw[0]);
         document.getElementById('worstStoreAlertsPct').textContent = kw[1];
-        document.getElementById('worstStoreAlerts').innerHTML = `<strong>${kw[2]}</strong> alertas totales`;
+        document.getElementById('worstStoreAlerts').innerHTML = `<strong>${kw[2]}</strong> ` + tr('alertas totales');
         
         const sf = (D.svc_fast && D.svc_fast[0]) ? D.svc_fast[0] : ['-', '-'];
         const ss = (D.svc_slow && D.svc_slow[0]) ? D.svc_slow[0] : ['-', '-'];
@@ -1556,7 +1784,7 @@ function drawRankings() {
 // ─── ÁREAS ───────────────────────────────────────────────────
 function drawAreas() {
   const tblRows = (rows,col,total) => rows.map(([l,v])=>`<tr>
-    <td>${l}<div style="height:3px;background:${col};opacity:.35;border-radius:1px;width:${(v/(rows[0][1]||1)*60).toFixed(0)}px;margin-top:3px"></div></td>
+    <td>${tr(l)}<div style="height:3px;background:${col};opacity:.35;border-radius:1px;width:${(v/(rows[0][1]||1)*60).toFixed(0)}px;margin-top:3px"></div></td>
     <td class="r" style="color:${col}">${fmt(v)}</td>
     <td class="r">${total?(v/total*100).toFixed(1)+'%':'—'}</td>
   </tr>`).join('');
@@ -1732,6 +1960,17 @@ function drawKBP(id) {
   }[id];
 
   document.getElementById(id+'Panels').innerHTML = C.alerts.map(a=>kbpPanel(a[0],a[2],pct(a[2],C.total),C.col,(C.ranks[a[1]]||[]).slice(0, 5))).join('');
+  if (id === 'kbp1' && document.getElementById('kbp1Chip')) {
+    document.getElementById('kbp1Chip').innerHTML = `<span></span>KBP 1 — ${tr('Experiencia del Cliente')} — ${fmt(D.ce)} ${tr('alertas')} = ${D.ce_pct}%`;
+    document.getElementById('kbp1TotalBox').textContent = fmt(D.ce);
+  } else if (id === 'kbp2' && document.getElementById('kbp2Chip')) {
+    document.getElementById('kbp2Chip').innerHTML = `<span></span>KBP 2 — ${tr('Reducción de Costos')} — ${fmt(D.rc)} ${tr('alertas')} = ${D.rc_pct}% — ${tr('top 8 mostrado')}`;
+    document.getElementById('kbp2TotalBox').textContent = fmt(D.rc);
+  } else if (id === 'kbp3' && document.getElementById('kbp3Chip')) {
+    document.getElementById('kbp3Chip').innerHTML = `<span></span>KBP 3 — ${tr('Conformidad Operacional')} — ${fmt(D.co)} ${tr('alertas')} = ${D.co_pct}%`;
+    document.getElementById('kbp3TotalBox').textContent = fmt(D.co);
+  }
+
   const maxAll = C.all.length ? C.all[0][1] : 1;
   document.getElementById(id+'Res').innerHTML = C.all.map(a=>barRow(a[0],a[1],maxAll,C.col,pct(a[1],C.total))).join('');
 
@@ -1767,6 +2006,13 @@ function drawKBP(id) {
 // ─── DELIVERY ─────────────────────────────────────────────────
 function drawDelivery() {
   if (document.getElementById('delAvgLabel')) document.getElementById('delAvgLabel').textContent = D.del_avg;
+  if(D.del_fast.length > 0 && D.del_slow.length > 0 && document.getElementById('delInsight')) {
+      document.getElementById('delInsight').innerHTML = `<span style="font-size:18px">📊</span><span><strong>${tr('Insight')}:</strong> ${tr('Mejor')}: ${sn(D.del_fast[0][0])} (${D.del_fast[0][1]}) &nbsp;·&nbsp; ${tr('Peor')}: ${sn(D.del_slow[0][0])} (${D.del_slow[0][1]}) &nbsp;·&nbsp; ${D.del_gt3}% ${tr('supera los 3 minutos de espera')}</span>`;
+      document.getElementById('delInsight').style.display = 'block';
+  } else if (document.getElementById('delInsight')) {
+      document.getElementById('delInsight').style.display = 'none';
+  }
+
   if (document.getElementById('delWaitLabel')) {
       const tot = D.delivery_total || 1;
       document.getElementById('delWaitLabel').textContent = D.delivery_wait;
@@ -1849,6 +2095,14 @@ function drawDelivery() {
 }
 // ─── DRIVE THRU ───────────────────────────────────────────────
 function drawDT() {
+    if (document.getElementById('dtInsight')) {
+    if(D.has_drive_thru) {
+        document.getElementById('dtInsight').innerHTML = `<span>🚗</span><span>${D.franchise} ${tr('registró')} <strong>${D.dt_total} ${tr('alertas Drive Thru')}</strong> ${tr('en')} ${D.period}.</span>`;
+    } else {
+        document.getElementById('dtInsight').innerHTML = `<span>🚗</span><span>${D.franchise} ${tr('registró')} <strong>0 ${tr('alertas Drive Thru')}</strong> ${tr('en')} ${D.period}. ${tr('Las estaciones operaron sin incidencias detectadas.')}</span>`;
+    }
+  }
+
   if (!D.has_drive_thru) {
     document.getElementById('dtPanels').innerHTML = `
       <div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--muted)">
@@ -1871,9 +2125,9 @@ function drawDT() {
   ];
   document.getElementById('dtPanels').innerHTML = items.map(it=>`
     <div class="card">
-      <div class="card-title" style="color:${it.col}">${it.lbl} <span class="card-badge">${it.total} alertas</span></div>
+      <div class="card-title" style="color:${it.col}">${tr(it.lbl)} <span class="card-badge">${it.total} ${tr('alertas')}</span></div>
       ${it.top.length ? it.top.map((r,i)=>rankRow(i,r[0],r[2].toFixed(1)+'%',it.col)).join('') :
-        '<div style="font-size:12px;color:var(--muted);text-align:center;padding:20px 0">Sin alertas en este período</div>'}
+        '<div style="font-size:12px;color:var(--muted);text-align:center;padding:20px 0">' + tr('Sin alertas en este período') + '</div>'}
     </div>`).join('');
 
   if (document.getElementById('dtRows')) {
@@ -1891,7 +2145,11 @@ function drawDT() {
 // ─── CAM CHECK ────────────────────────────────────────────────
 function drawCam() {
   if(document.getElementById('camTotalLabel')) document.getElementById('camTotalLabel').textContent = fmt(D.cam_total);
-  if(document.getElementById('camStoresLabel')) document.getElementById('camStoresLabel').textContent = `${D.cam_stores_count} tiendas afectadas de ${D.n_stores}`;
+    if(document.getElementById('camStoresLabel')) {
+      document.getElementById('camStoresLabel').textContent = tr('label-camcheck-affected-stores')
+          .replace('{{ count }}', D.cam_stores_count)
+          .replace('{{ total }}', D.n_stores);
+  }
 
   const falloTypes = [
       ['Lost Connection', D.cam_lost],
@@ -1940,7 +2198,7 @@ function drawCam() {
 
   document.getElementById('camRows').innerHTML = D.cam_stores.map(cs=>{
     const top5 = cs.rank<=10;
-    const tag = cs.cam>=3 ? '<span class="tag-r">⚠️ Revisar</span>' : '<span class="tag-m">👁️ Monit.</span>';
+    const tag = cs.cam>=3 ? `<span class="tag-r">⚠️ ${tr('Revisar')}</span>` : `<span class="tag-m">👁️ ${tr('Monit.')}</span>`;
     return `<div class="cam-row">
       <span class="cam-c">${sn(cs.store)}</span>
       <span class="cam-c hi">${cs.cam}</span>
@@ -1958,30 +2216,12 @@ drawResumen();
 
 document.getElementById('kbpTotalLabel').textContent = fmt(D.kbp);
 
-// Dynamic KBP breakdowns total calculations
-if (document.getElementById('kbp1Chip')) {
-  document.getElementById('kbp1Chip').innerHTML = `<span></span>KBP 1 — Experiencia del Cliente — ${fmt(D.ce)} alertas = ${D.ce_pct}%`;
-  document.getElementById('kbp1TotalBox').textContent = fmt(D.ce);
-}
-if (document.getElementById('kbp2Chip')) {
-  document.getElementById('kbp2Chip').innerHTML = `<span></span>KBP 2 — Reducción de Costos — ${fmt(D.rc)} alertas = ${D.rc_pct}% — top 8 mostrado`;
-  document.getElementById('kbp2TotalBox').textContent = fmt(D.rc);
-}
-if (document.getElementById('kbp3Chip')) {
-  document.getElementById('kbp3Chip').innerHTML = `<span></span>KBP 3 — Conformidad Operacional — ${fmt(D.co)} alertas = ${D.co_pct}%`;
-  document.getElementById('kbp3TotalBox').textContent = fmt(D.co);
-}
 
-if(D.del_fast.length > 0 && D.del_slow.length > 0) {
-    document.getElementById('delInsight').innerHTML = `<span style="font-size:18px">📊</span><span><strong>Insight:</strong> Mejor: ${sn(D.del_fast[0][0])} (${D.del_fast[0][1]}) &nbsp;·&nbsp; Peor: ${sn(D.del_slow[0][0])} (${D.del_slow[0][1]}) &nbsp;·&nbsp; ${D.del_gt3}% supera los 3 minutos de espera</span>`;
-} else {
-    document.getElementById('delInsight').style.display = 'none';
-}
-if(D.has_drive_thru) {
-    document.getElementById('dtInsight').innerHTML = `<span>🚗</span><span>${D.franchise} registró <strong>${D.dt_total} alertas Drive Thru</strong> en ${D.period}.</span>`;
-} else {
-    document.getElementById('dtInsight').innerHTML = `<span>🚗</span><span>${D.franchise} registró <strong>0 alertas Drive Thru</strong> en ${D.period}. Las estaciones operaron sin incidencias detectadas.</span>`;
-}
+
+
+
+
+
 
 function exportActiveTabToPDF() {
   document.body.classList.add('pdf-mode');
