@@ -114,7 +114,8 @@ KBP2_RC_ALL = [
 def parse_franchise(xlsx_path, franchise_name, period, period_long):
     rows = read_xlsx(xlsx_path)
     header = rows[5]
-    stores = [h.strip() for h in header[2:] if h.strip()]
+    raw_stores = [h.strip() for h in header[2:] if h.strip()]
+    stores = [f"Store {i+1:02d}" for i in range(len(raw_stores))]
     n = len(stores)
 
     def gt(k):
