@@ -35,7 +35,11 @@ global.Chart = class {
     static defaults = { set: () => {} };
 };
 global.ChartDataLabels = {};
-global.window = { innerWidth: 1024, onerror: () => {} };
+global.localStorage = {
+    getItem: () => 'pt',
+    setItem: () => {}
+};
+global.window = { innerWidth: 1024, onerror: () => {}, addEventListener: () => {} };
 global.getComputedStyle = () => ({
     getPropertyValue: (name) => {
         if (name === '--ce') return '#52B788';

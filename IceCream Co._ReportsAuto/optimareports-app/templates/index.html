@@ -10,7 +10,11 @@
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;}
 .logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--ce);margin-bottom:8px;}
 .logo span{color:var(--bright);}
-.subtitle{font-size:13px;color:var(--muted);margin-bottom:40px;font-family:'DM Mono',monospace;}
+.subtitle{font-size:13px;color:var(--muted);margin-bottom:24px;font-family:'DM Mono',monospace;}
+.lang-bar{display:flex;justify-content:center;gap:8px;margin-bottom:24px;width:100%;max-width:480px;}
+.lang-btn{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:6px 12px;font-size:11px;font-family:'DM Mono',monospace;cursor:pointer;transition:all 0.2s;}
+.lang-btn:hover{color:var(--bright);border-color:var(--text);}
+.lang-btn.active{border-color:var(--ce);color:var(--bright);background:rgba(82,183,136,.08);font-weight:600;}
 .form-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:36px 40px;width:100%;max-width:480px;}
 .form-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--bright);margin-bottom:28px;}
 .field{margin-bottom:20px;}
@@ -31,29 +35,25 @@ select:focus,input:focus{border-color:var(--ce);}
 </head>
 <body>
 <div class="logo">OptimaReports<span>.ai</span></div>
-<div class="subtitle">DA07QUMX · IceCream Co. México · Report Generator</div>
+<div class="subtitle" id="page-subtitle">DA07QUMX · IceCream Co. México · Report Generator</div>
+
+<div class="lang-bar">
+  <button class="lang-btn" onclick="setLang('es')" id="btn-es">🇪🇸 ES</button>
+  <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">🇧🇷 PT</button>
+  <button class="lang-btn" onclick="setLang('en')" id="btn-en">🇺🇸 EN</button>
+</div>
 
 <div class="form-card">
-  <div class="form-title">Generar Reporte</div>
-  <div style="font-size:12px; color:var(--muted); margin-bottom:20px; line-height:1.45;">
-    <strong>💡 Modo Demo Activo:</strong> Si no selecciona ningún archivo, el sistema cargará automáticamente una planilha de demostración real de <strong>GammaFranchise</strong> con datos completos (incluyendo Drive Thru y Delivery).
+  <div class="form-title" id="form-title">Generar Reporte</div>
+  <div id="demo-text" style="font-size:12px; color:var(--muted); margin-bottom:20px; line-height:1.45;">
+    <strong>💡 Modo Demo Activo:</strong> Si no selecciona ningún archivo, el sistema cargará automáticamente una planilha de demostración real de <strong>GammaFranchise</strong> con dados completos (incluyendo Drive Thru y Delivery).
   </div>
   <form action="/generate" method="POST" enctype="multipart/form-data" id="reportForm">
 
     <div class="field">
-      <label>Tipo de Reporte</label>
-      <select name="report_type" id="reportTypeSelect">
-        <option value="Semanal">Semanal</option>
-        <option value="Mensual" selected>Mensual</option>
-        <option value="Semestral">Semestral</option>
-        <option value="Anual">Anual</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label>Franquicia</label>
+      <label id="lbl-franchise">Franquicia</label>
       <select name="franchise" id="franchiseSelect">
-        <option value="">— Demo (GammaFranchise) —</option>
+        <option value="" id="opt-demo">— Demo (GammaFranchise) —</option>
         {% for f in franchises %}
         <option value="{{ f }}">{{ f }}</option>
         {% endfor %}
@@ -61,21 +61,21 @@ select:focus,input:focus{border-color:var(--ce);}
     </div>
 
     <div class="field">
-      <label>Período</label>
-      <input type="text" name="period" placeholder="Abril 2026 (Dejar vacío para Demo)" />
+      <label id="lbl-period">Período</label>
+      <input type="text" name="period" id="input-period" placeholder="Abril 2026 (Dejar vacío para Demo)" />
     </div>
 
     <div class="field">
-      <label>Período completo (específico)</label>
-      <input type="text" name="period_long" placeholder="01 – 30 Abril 2026 (Dejar vacío para Demo)" />
+      <label id="lbl-period-long">Período completo (específico)</label>
+      <input type="text" name="period_long" id="input-period-long" placeholder="01 – 30 Abril 2026 (Dejar vacío para Demo)" />
     </div>
 
     <div class="field">
-      <label>Archivo Excel (.xlsx)</label>
+      <label id="lbl-excel">Archivo Excel (.xlsx)</label>
       <div class="file-area" onclick="document.getElementById('fileInput').click()">
         <input type="file" id="fileInput" name="excel" accept=".xlsx"
                onchange="document.getElementById('fileName').textContent=this.files[0]?.name||''">
-        <div class="file-label">Clique para seleccionar o <strong>arrastre</strong> el archivo</div>
+        <div class="file-label" id="drag-text">Clique para seleccionar o <strong>arrastre</strong> el archivo</div>
         <div class="file-name" id="fileName"></div>
       </div>
     </div>
@@ -90,6 +90,92 @@ document.getElementById('reportForm').onsubmit = function() {
   document.getElementById('submitBtn').disabled = true;
   document.getElementById('loading').style.display = 'block';
 };
+
+const indexTranslations = {
+  es: {
+    title: "Generar Reporte",
+    demo: "<strong>💡 Modo Demo Activo:</strong> Si no selecciona ningún archivo, el sistema cargará automáticamente una planilla de demostración real de <strong>GammaFranchise</strong> con datos completos (incluyendo Drive Thru y Delivery).",
+    franchise: "Franquicia",
+    period: "Período",
+    period_long: "Período completo (específico)",
+    excel: "Archivo Excel (.xlsx)",
+    drag: "Clique para seleccionar o <strong>arrastre</strong> el archivo",
+    generate: "Generar Reporte →",
+    processing: "⏳ Procesando archivo...",
+    placeholder_period: "Abril 2026 (Dejar vacío para Demo)",
+    placeholder_period_long: "01 – 30 Abril 2026 (Dejar vacío para Demo)",
+    select_demo: "— Demo (GammaFranchise) —",
+    page_title: "OptimaReports · Generar Reporte IC México",
+    generator: "DA07QUMX · IceCream Co. México · Report Generator"
+  },
+  pt: {
+    title: "Gerar Relatório",
+    demo: "<strong>💡 Modo Demo Ativo:</strong> Se você não selecionar nenhum arquivo, o sistema carregará automaticamente uma planilha de demonstração real da <strong>GammaFranchise</strong> com dados completos (incluindo Drive Thru e Delivery).",
+    franchise: "Franquia",
+    period: "Período",
+    period_long: "Período completo (específico)",
+    excel: "Arquivo Excel (.xlsx)",
+    drag: "Clique para selecionar ou <strong>arraste</strong> o arquivo aqui",
+    generate: "Gerar Relatório →",
+    processing: "⏳ Processando arquivo...",
+    placeholder_period: "Abril 2026 (Deixar vazio para Demo)",
+    placeholder_period_long: "01 – 30 Abril 2026 (Deixar vazio para Demo)",
+    select_demo: "— Demo (GammaFranchise) —",
+    page_title: "OptimaReports · Gerar Relatório IC México",
+    generator: "DA07QUMX · IceCream Co. México · Gerador de Relatórios"
+  },
+  en: {
+    title: "Generate Report",
+    demo: "<strong>💡 Demo Mode Active:</strong> If no file is selected, the system will automatically load a real demonstration spreadsheet from <strong>GammaFranchise</strong> with full metrics (including Drive Thru and Delivery).",
+    franchise: "Franchise",
+    period: "Period",
+    period_long: "Full Period (specific)",
+    excel: "Excel File (.xlsx)",
+    drag: "Click to select or <strong>drag</strong> the file here",
+    generate: "Generate Report →",
+    processing: "⏳ Processing file...",
+    placeholder_period: "April 2026 (Leave empty for Demo)",
+    placeholder_period_long: "April 01 – 30, 2026 (Leave empty for Demo)",
+    select_demo: "— Demo (GammaFranchise) —",
+    page_title: "OptimaReports · Generate IC Mexico Report",
+    generator: "DA07QUMX · IceCream Co. Mexico · Report Generator"
+  }
+};
+
+let currentLang = 'pt';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.getElementById('btn-' + lang).classList.add('active');
+  
+  const t = indexTranslations[lang];
+  
+  document.title = t.page_title;
+  document.getElementById('page-subtitle').textContent = t.generator;
+  document.getElementById('form-title').textContent = t.title;
+  document.getElementById('demo-text').innerHTML = t.demo;
+  
+  document.getElementById('lbl-franchise').textContent = t.franchise;
+  document.getElementById('lbl-period').textContent = t.period;
+  document.getElementById('lbl-period-long').textContent = t.period_long;
+  document.getElementById('lbl-excel').textContent = t.excel;
+  
+  document.getElementById('drag-text').innerHTML = t.drag;
+  document.getElementById('submitBtn').textContent = t.generate;
+  document.getElementById('loading').textContent = t.processing;
+  
+  document.getElementById('input-period').placeholder = t.placeholder_period;
+  document.getElementById('input-period-long').placeholder = t.placeholder_period_long;
+  document.getElementById('opt-demo').textContent = t.select_demo;
+  
+  localStorage.setItem('optima_lang', lang);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('optima_lang') || 'pt';
+  setLang(saved);
+});
 </script>
 </body>
 </html>

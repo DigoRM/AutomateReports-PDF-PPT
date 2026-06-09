@@ -26,7 +26,6 @@ def generate():
     franchise = request.form.get('franchise', '')
     period    = request.form.get('period', '')
     period_long = request.form.get('period_long', '')
-    report_type = request.form.get('report_type', 'Mensual')
 
     # Default values if not specified
     if not franchise:
@@ -76,7 +75,6 @@ def generate():
         franchise=franchise,
         period=period,
         n_stores=data['n_stores'],
-        report_type=report_type,
     )
 
 @app.route('/export_pdf', methods=['POST'])
@@ -86,7 +84,6 @@ def export_pdf():
     data_json = request.form.get('data_json', '{}')
     n_stores = request.form.get('n_stores', 0)
     theme = request.form.get('theme', 'dark')
-    report_type = request.form.get('report_type', 'Mensual')
     
     # Render the HTML template
     html_content = render_template(
@@ -94,8 +91,7 @@ def export_pdf():
         DATA_JSON=data_json,
         franchise=franchise,
         period=period,
-        n_stores=n_stores,
-        report_type=report_type
+        n_stores=n_stores
     )
     
     # Inject Playwright helper script to make all tabs visible and draw them
@@ -175,7 +171,6 @@ def export_pptx():
     data_json = request.form.get('data_json', '{}')
     n_stores = request.form.get('n_stores', 0)
     theme = request.form.get('theme', 'dark')
-    report_type = request.form.get('report_type', 'Mensual')
     
     # Render the HTML template
     html_content = render_template(
@@ -183,8 +178,7 @@ def export_pptx():
         DATA_JSON=data_json,
         franchise=franchise,
         period=period,
-        n_stores=n_stores,
-        report_type=report_type
+        n_stores=n_stores
     )
     
     # Force pdf-mode class on body

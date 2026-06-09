@@ -216,6 +216,14 @@ body.light-theme .kbpp {
 body.light-theme .btn-theme:hover {
   background: #F1F5F9 !important;
 }
+.lang-btn-top.active {
+  background: var(--ce) !important;
+  color: #0A0F1A !important;
+  font-weight: bold;
+}
+body.light-theme .lang-btn-top.active {
+  color: #FFFFFF !important;
+}
 
 /* PRINT */
 @media print{
@@ -392,9 +400,14 @@ body.pdf-mode .speed-rr-val {
 <div class="topbar">
   <div class="logo">OptimaReports<span>.ai</span></div>
   <div class="top-code">DA07QUMX</div>
-  <div class="top-meta">IceCream Co. México · Reporte {{ report_type }} · {{ franchise }} · {{ n_stores }} Tiendas · {{ period }}</div>
+  <div class="top-meta" id="top-meta-text">IceCream Co. México · {{ franchise }} · {{ n_stores }} Tiendas · {{ period }}</div>
   <div class="topbar-right">
     <div class="top-meta" id="clock"></div>
+    <div class="lang-bar-top" style="display:flex;gap:4px;border:1px solid var(--border);border-radius:6px;padding:2px;background:var(--card);">
+      <button class="lang-btn-top" onclick="changeDashboardLang('es')" id="db-btn-es" style="background:transparent;border:none;color:var(--text);font-family:'DM Mono',monospace;font-size:10px;padding:4px 8px;cursor:pointer;border-radius:4px;transition:all 0.2s;">ES</button>
+      <button class="lang-btn-top" onclick="changeDashboardLang('pt')" id="db-btn-pt" style="background:transparent;border:none;color:var(--text);font-family:'DM Mono',monospace;font-size:10px;padding:4px 8px;cursor:pointer;border-radius:4px;transition:all 0.2s;">PT</button>
+      <button class="lang-btn-top" onclick="changeDashboardLang('en')" id="db-btn-en" style="background:transparent;border:none;color:var(--text);font-family:'DM Mono',monospace;font-size:10px;padding:4px 8px;cursor:pointer;border-radius:4px;transition:all 0.2s;">EN</button>
+    </div>
     <button class="btn-theme" onclick="toggleTheme()" style="background:transparent;border:1px solid var(--border);color:var(--text);border-radius:6px;padding:6px 12px;font-size:12px;font-family:'Syne',sans-serif;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s;"><span id="theme-icon">☀️</span> <span id="theme-text">Claro</span></button>
     <button class="btn-print btn-print-server" onclick="exportAllTabsToPDFServer()" style="background:#8B5CF6;color:#fff;">⬇ PDF Completo (Servidor)</button>
     <button class="btn-print btn-pptx" onclick="exportAllTabsToPPTXServer()" style="background:#E05638;color:#fff;">⬇ PPTX Completo (Pitch)</button>
@@ -847,6 +860,394 @@ Chart.defaults.set('plugins.datalabels', {
 // ─── DATA ───────────────────────────────────────────────────
 const D = {{ DATA_JSON | safe }};
 
+// --- MULTILINGUAL TRANSLATION SYSTEM ---
+const DB_L = {
+  es: {
+    // Topbar
+    'top-meta': 'IceCream Co. México · {{ franchise }} · {{ n_stores }} Tiendas · {{ period }}',
+    'clock': 'Reloj',
+    'btn-pdf-server': '⬇ PDF Completo (Servidor)',
+    'btn-pptx-server': '⬇ PPTX Completo (Pitch)',
+    
+    // Tabs
+    'tab-resumen': '📊 Resumen',
+    'tab-rankings': '🏆 Rankings KBP',
+    'tab-areas': '📋 Áreas',
+    'tab-velocidad': '⚡ Velocidad',
+    'tab-kbp1': 'CE Desglose',
+    'tab-kbp2': 'RC Desglose',
+    'tab-kbp3': 'CO Desglose',
+    'tab-delivery': '🏍️ Delivery',
+    'tab-drivethru': '🚗 Drive Thru',
+    'tab-camcheck': '📷 Cam Check',
+
+    // Titles
+    'title-dist-kbp': 'Distribución KBP',
+    'title-dist-area': 'Distribución por Área',
+    'title-top-alerts': 'Top 15 Tipos de Alerta',
+    'title-top-stores': 'Top 10 Tiendas',
+    'title-performance': 'Desempeño de Tiendas (Alertas Totales)',
+    'title-svc-time': 'Tiempo de Servicio',
+    'title-del-wait': 'Delivery Wait',
+    
+    // Table Headers and UI Labels
+    'hdr-alert': 'Alerta',
+    'hdr-store': 'Tienda',
+    'hdr-num': 'N',
+    'hdr-pct': '%',
+    'label-alertas': 'alertas',
+    'label-alertas-totales': 'alertas totales',
+    'label-visual': 'visual',
+    'label-best': 'Menos alertas',
+    'label-worst': 'Más alertas',
+    'label-fastest': '⚡ Más Rápida',
+    'label-slowest': '🐌 Más Lenta',
+    'label-avg-group': 'min · promedio del grupo',
+    'label-ranking-kbp-stacked': 'Ranking Geral Stacked por KBP (CE, RC, CO)',
+    'label-ranking-area-stacked': 'Ranking Geral Stacked por Área',
+    'label-ranking-del': 'Ranking de Tiendas - Tiempo de Delivery',
+    'label-ranking-dt': 'Ranking de Tiendas con Alertas Drive Thru',
+    'label-tot-alerts-dt': 'Total Alertas DT',
+    'label-store-alerts-dt': 'Alertas de la Tienda',
+    'label-camcheck-total': 'alertas Cam Check totales',
+    'label-camcheck-affected': 'tiendas afectadas',
+    'label-camcheck-failures': 'Tipos de fallo',
+    'label-camcheck-pos': 'Tiendas con Alertas Cam Check — Posición en Ranking General',
+    'label-camcheck-analysis': 'Análisis',
+    'label-camcheck-warn-title': '⚠️ Interpretación de Datos',
+    'label-camcheck-warn-text': 'Tiendas con fallos de cámara pueden mostrar menos alertas KBP. Esto NO necesariamente indica un melhor desempeño — los datos son incompletos y deben contextualizarse al evaluar rankings.',
+    
+    // Areas Header Names
+    'area-caja': 'Caja',
+    'area-caja-sub': 'Caja registradora y atención en mostrador',
+    'area-allstore': 'Toda la Tienda',
+    'area-allstore-sub': 'Comportamientos en toda la tienda',
+    'area-delivery': 'Delivery',
+    'area-delivery-sub': 'Alertas de repartidores a domicilio',
+    'area-drivethru': 'Drive Thru',
+    'area-drivethru-sub': 'Alertas exclusivas [D]',
+
+    // Alerts Translation
+    'Recepción de orden >3min': 'Recepción de orden >3min',
+    '+3 personas en fila': '+3 personas en fila',
+    'Cliente sin atender >1min': 'Cliente sin atender >1min',
+    'Cliente perdido': 'Cliente perdido',
+    'Piso sucio >3min': 'Piso sucio >3min',
+    'Cliente con queja': 'Cliente con queja',
+    'Personal sin gorra': 'Personal sin gorra',
+    'Personal sin uniforme': 'Personal sin uniforme',
+    'Repartidor esperando >1min': 'Repartidor esperando >1min',
+    'Repartidor con producto en ropa': 'Repartidor con producto en ropa',
+    'Empaque cerrado': 'Empaque cerrado',
+    'Refrigeradores incompletos': 'Refrigeradores incompletos',
+    'Cajón de dinero abierto': 'Cajón de dinero abierto',
+    'Personal fuera de caja >1min': 'Personal fuera de caja >1min',
+    'Personal móvil': 'Personal móvil',
+    'Uso incorrecto de PIN pad': 'Uso incorrecto de PIN pad',
+    'Cierre anticipado de tienda': 'Cierre anticipado de tienda',
+    'Apertura tardía de tienda': 'Apertura tardía de tienda',
+    'Personal inactivo >5min': 'Personal inactivo >5min',
+    'Jugando/peleando': 'Jugando/peleando',
+    'Verificar empaque': 'Verificar empaque',
+    'Recibo no entregado': 'Recibo no entregado',
+    'Recibo no impreso': 'Recibo no impreso',
+    '[D] Cajón de dinero abierto': '[D] Cajón de dinero abierto',
+    '[D] Cajón de dinero': '[D] Cajón de dinero',
+    '[D] Recibo no entregado': '[D] Recibo no entregado',
+    '[D] Personal fuera de caja': '[D] Personal fuera de caja',
+    '[D] Personal móvil': '[D] Personal móvil',
+    '[D] PIN pad': '[D] PIN pad',
+    'Conexión perdida': 'Conexión perdida',
+    'Cámara borrosa': 'Cámara borrosa',
+    'Fallo de conexión': 'Fallo de conexión',
+    'Obstrucción': 'Obstrucción',
+    'Lagging': 'Lagging',
+    'Espera de delivery >1min': 'Espera de delivery >1min',
+    'Piso sucio': 'Piso sucio',
+    
+    // Fallback Areas
+    'Caja': 'Caja',
+    'Toda la Tienda': 'Toda la Tienda',
+    'Delivery': 'Delivery',
+    'Drive Thru': 'Drive Thru',
+    'Cam Check': 'Cam Check',
+    'Experiencia del Cliente': 'Experiencia del Cliente',
+    'Reducción de Costos': 'Reducción de Costos',
+    'Conformidad Operacional': 'Conformidad Operacional'
+  },
+  pt: {
+    // Topbar
+    'top-meta': 'IceCream Co. México · {{ franchise }} · {{ n_stores }} Lojas · {{ period }}',
+    'clock': 'Relógio',
+    'btn-pdf-server': '⬇ PDF Completo (Servidor)',
+    'btn-pptx-server': '⬇ PPTX Completo (Pitch)',
+    
+    // Tabs
+    'tab-resumen': '📊 Resumo',
+    'tab-rankings': '🏆 Rankings KBP',
+    'tab-areas': '📋 Áreas',
+    'tab-velocidad': '⚡ Velocidade',
+    'tab-kbp1': 'CE Detalhes',
+    'tab-kbp2': 'RC Detalhes',
+    'tab-kbp3': 'CO Detalhes',
+    'tab-delivery': '🏍️ Delivery',
+    'tab-drivethru': '🚗 Drive Thru',
+    'tab-camcheck': '📷 Cam Check',
+
+    // Titles
+    'title-dist-kbp': 'Distribuição KBP',
+    'title-dist-area': 'Distribuição por Área',
+    'title-top-alerts': 'Top 15 Tipos de Alerta',
+    'title-top-stores': 'Top 10 Lojas',
+    'title-performance': 'Desempenho das Lojas (Total de Alertas)',
+    'title-svc-time': 'Tempo de Serviço',
+    'title-del-wait': 'Tempo de Delivery',
+    
+    // Table Headers and UI Labels
+    'hdr-alert': 'Alerta',
+    'hdr-store': 'Loja',
+    'hdr-num': 'N',
+    'hdr-pct': '%',
+    'label-alertas': 'alertas',
+    'label-alertas-totales': 'alertas totais',
+    'label-visual': 'visual',
+    'label-best': 'Menos alertas',
+    'label-worst': 'Mais alertas',
+    'label-fastest': '⚡ Mais Rápida',
+    'label-slowest': '🐌 Mais Lenta',
+    'label-avg-group': 'min · média do grupo',
+    'label-ranking-kbp-stacked': 'Ranking Geral Stacked por KBP (CE, RC, CO)',
+    'label-ranking-area-stacked': 'Ranking Geral Stacked por Área',
+    'label-ranking-del': 'Ranking de Lojas - Tempo de Delivery',
+    'label-ranking-dt': 'Ranking de Lojas com Alertas Drive Thru',
+    'label-tot-alerts-dt': 'Total Alertas DT',
+    'label-store-alerts-dt': 'Alertas da Loja',
+    'label-camcheck-total': 'total de alertas Cam Check',
+    'label-camcheck-affected': 'lojas afetadas',
+    'label-camcheck-failures': 'Tipos de falha',
+    'label-camcheck-pos': 'Lojas com Alertas Cam Check — Posição no Ranking Geral',
+    'label-camcheck-analysis': 'Análise',
+    'label-camcheck-warn-title': '⚠️ Interpretação dos Dados',
+    'label-camcheck-warn-text': 'Lojas com falhas de câmera podem mostrar menos alertas KBP. Isso NÃO necessariamente indica um melhor desempenho — os dados são incompletos e devem ser contextualizados ao avaliar os rankings.',
+    
+    // Areas Header Names
+    'area-caja': 'Caixa',
+    'area-caja-sub': 'Caixa registradora e atendimento ao cliente',
+    'area-allstore': 'Toda a Loja',
+    'area-allstore-sub': 'Comportamentos em toda a loja',
+    'area-delivery': 'Delivery',
+    'area-delivery-sub': 'Alertas de entregadores em domicílio',
+    'area-drivethru': 'Drive Thru',
+    'area-drivethru-sub': 'Alertas exclusivos de [D] Drive Thru',
+
+    // Alerts Translation
+    'Recepción de orden >3min': 'Recebimento de pedido >3min',
+    '+3 personas en fila': '+3 pessoas na fila',
+    'Cliente sin atender >1min': 'Cliente sem atendimento >1min',
+    'Cliente perdido': 'Cliente perdido',
+    'Piso sucio >3min': 'Piso sujo >3min',
+    'Cliente con queja': 'Cliente com reclamação',
+    'Personal sin gorra': 'Funcionário sem boné',
+    'Personal sin uniforme': 'Funcionário sem uniforme',
+    'Repartidor esperando >1min': 'Entregador esperando >1min',
+    'Repartidor con product en ropa': 'Entregador com produto na roupa',
+    'Repartidor con produto en ropa': 'Entregador com produto na roupa',
+    'Repartidor con produto en roupa': 'Entregador com produto na roupa',
+    'Repartidor con producto en ropa': 'Entregador com produto na roupa',
+    'Empaque cerrado': 'Embalagem fechada',
+    'Refrigeradores incompletos': 'Refrigeradores incompletos',
+    'Cajón de dinero abierto': 'Gaveta de dinheiro aberta',
+    'Personal fuera de caja >1min': 'Funcionário fora do caixa >1min',
+    'Personal móvil': 'Funcionário usando celular',
+    'Uso incorrecto de PIN pad': 'Uso incorreto da maquininha (PIN pad)',
+    'Cierre anticipado de tienda': 'Fechamento antecipado da loja',
+    'Apertura tardía de tienda': 'Abertura tardia da loja',
+    'Personal inactivo >5min': 'Funcionário inativo >5min',
+    'Jugando/peleando': 'Brincando/brigando',
+    'Verificar empaque': 'Verificar embalagem',
+    'Recibo no entregado': 'Recibo não entregue',
+    'Recibo no impreso': 'Recibo não impresso',
+    '[D] Cajón de dinero abierto': '[D] Gaveta de dinheiro aberta',
+    '[D] Cajón de dinero': '[D] Gaveta de dinheiro',
+    '[D] Recibo no entregado': '[D] Recibo não entregue',
+    '[D] Personal fuera de caja': '[D] Funcionário fora do caixa',
+    '[D] Personal móvil': '[D] Funcionário usando celular',
+    '[D] PIN pad': '[D] Maquininha (PIN pad)',
+    'Conexión perdida': 'Conexão perdida',
+    'Cámara borrosa': 'Câmera embaçada',
+    'Fallo de conexión': 'Falha de conexão',
+    'Obstrucción': 'Obstrução',
+    'Lagging': 'Lentidão (Lagging)',
+    'Espera de delivery >1min': 'Espera no delivery >1min',
+    'Piso sucio': 'Piso sujo',
+    
+    // Fallback Areas
+    'Caja': 'Caixa',
+    'Toda la Tienda': 'Toda a Loja',
+    'Delivery': 'Delivery',
+    'Drive Thru': 'Drive Thru',
+    'Cam Check': 'Cam Check',
+    'Experiencia del Cliente': 'Experiência do Cliente',
+    'Reducción de Costos': 'Redução de Custos',
+    'Conformidad Operacional': 'Conformidade Operacional'
+  },
+  en: {
+    // Topbar
+    'top-meta': 'IceCream Co. Mexico · {{ franchise }} · {{ n_stores }} Stores · {{ period }}',
+    'clock': 'Clock',
+    'btn-pdf-server': '⬇ Full PDF (Server)',
+    'btn-pptx-server': '⬇ Full PPTX (Pitch)',
+    
+    // Tabs
+    'tab-resumen': '📊 Summary',
+    'tab-rankings': '🏆 KBP Rankings',
+    'tab-areas': '📋 Areas',
+    'tab-velocidad': '⚡ Speed',
+    'tab-kbp1': 'CE Breakdown',
+    'tab-kbp2': 'RC Breakdown',
+    'tab-kbp3': 'CO Breakdown',
+    'tab-delivery': '🏍️ Delivery',
+    'tab-drivethru': '🚗 Drive Thru',
+    'tab-camcheck': '📷 Cam Check',
+
+    // Titles
+    'title-dist-kbp': 'KBP Distribution',
+    'title-dist-area': 'Distribution by Area',
+    'title-top-alerts': 'Top 15 Alert Types',
+    'title-top-stores': 'Top 10 Stores',
+    'title-performance': 'Store Performance (Total Alerts)',
+    'title-svc-time': 'Service Time',
+    'title-del-wait': 'Delivery Wait Time',
+    
+    // Table Headers and UI Labels
+    'hdr-alert': 'Alert',
+    'hdr-store': 'Store',
+    'hdr-num': 'N',
+    'hdr-pct': '%',
+    'label-alertas': 'alerts',
+    'label-alertas-totales': 'total alerts',
+    'label-visual': 'visual',
+    'label-best': 'Fewer alerts',
+    'label-worst': 'More alerts',
+    'label-fastest': '⚡ Fastest',
+    'label-slowest': '🐌 Slowest',
+    'label-avg-group': 'min · group average',
+    'label-ranking-kbp-stacked': 'General Stacked Ranking by KBP (CE, RC, CO)',
+    'label-ranking-area-stacked': 'General Stacked Ranking by Area',
+    'label-ranking-del': 'Store Ranking - Delivery Time',
+    'label-ranking-dt': 'Store Ranking with Drive Thru Alerts',
+    'label-tot-alerts-dt': 'Total DT Alerts',
+    'label-store-alerts-dt': 'Store Alerts',
+    'label-camcheck-total': 'total Cam Check alerts',
+    'label-camcheck-affected': 'affected stores',
+    'label-camcheck-failures': 'Failure types',
+    'label-camcheck-pos': 'Stores with Cam Check Alerts — General Ranking Position',
+    'label-camcheck-analysis': 'Analysis',
+    'label-camcheck-warn-title': '⚠️ Data Interpretation',
+    'label-camcheck-warn-text': 'Stores with camera failures may show fewer KBP alerts. This does NOT necessarily indicate better performance — data is incomplete and must be contextualized when evaluating rankings.',
+    
+    // Areas Header Names
+    'area-caja': 'Cashier',
+    'area-caja-sub': 'Cash register and customer service',
+    'area-allstore': 'Whole Store',
+    'area-allstore-sub': 'Behaviors across the whole store',
+    'area-delivery': 'Delivery',
+    'area-delivery-sub': 'Home delivery driver alerts',
+    'area-drivethru': 'Drive Thru',
+    'area-drivethru-sub': 'Exclusive [D] Drive Thru alerts',
+
+    // Alerts Translation
+    'Recepción de orden >3min': 'Order receiving time >3min',
+    '+3 personas en fila': '+3 people in queue',
+    'Cliente sin atender >1min': 'Unattended customer >1min',
+    'Cliente perdido': 'Lost customer',
+    'Piso sucio >3min': 'Dirty floor >3min',
+    'Cliente con queja': 'Customer complaining',
+    'Personal sin gorra': 'Staff sin cap/hat',
+    'Personal sin uniforme': 'Staff sin uniform',
+    'Repartidor esperando >1min': 'Delivery driver waiting >1min',
+    'Repartidor con product en ropa': 'Delivery driver with product in clothes',
+    'Repartidor con produto en ropa': 'Delivery driver with product in clothes',
+    'Repartidor con produto en roupa': 'Delivery driver with product in clothes',
+    'Repartidor con producto en ropa': 'Delivery driver with product in clothes',
+    'Empaque cerrado': 'Package closed',
+    'Refrigeradores incompletos': 'Incomplete fridge',
+    'Cajón de dinero abierto': 'Cash drawer open',
+    'Personal fuera de caja >1min': 'Staff away from cash register >1min',
+    'Personal móvil': 'Staff using mobile phone',
+    'Uso incorrecto de PIN pad': 'PIN pad misuse',
+    'Cierre anticipado de tienda': 'Store closed early',
+    'Apertura tardía de tienda': 'Store opened late',
+    'Personal inactivo >5min': 'Inactive staff >5min',
+    'Jugando/peleando': 'Playing/fighting',
+    'Verificar empaque': 'Verify package',
+    'Recibo no entregado': 'Receipt not given',
+    'Recibo no impreso': 'Receipt not printed',
+    '[D] Cajón de dinero abierto': '[D] Cash drawer open',
+    '[D] Cajón de dinero': '[D] Cash drawer',
+    '[D] Recibo no entregado': '[D] Receipt not given',
+    '[D] Personal fuera de caja': '[D] Staff away from cash register',
+    '[D] Personal móvil': '[D] Staff using mobile phone',
+    '[D] PIN pad': '[D] PIN pad',
+    'Conexión perdida': 'Lost connection',
+    'Cámara borrosa': 'Blurry camera',
+    'Fallo de conexión': 'Connection failure',
+    'Obstrucción': 'Camera obstruction',
+    'Lagging': 'Lagging camera feed',
+    'Espera de delivery >1min': 'Delivery wait time >1min',
+    'Piso sucio': 'Dirty floor',
+    
+    // Fallback Areas
+    'Caja': 'Cashier',
+    'Toda la Tienda': 'Whole Store',
+    'Delivery': 'Delivery',
+    'Drive Thru': 'Drive Thru',
+    'Cam Check': 'Cam Check',
+    'Experiencia del Cliente': 'Customer Experience',
+    'Reducción de Costos': 'Reduce Costs',
+    'Conformidad Operacional': 'Operational Compliance'
+  }
+};
+
+let currentLang = localStorage.getItem('optima_lang') || 'pt';
+
+function tr(key) {
+  const dict = DB_L[currentLang] || DB_L['es'];
+  return dict[key] || key;
+}
+
+function changeDashboardLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('optima_lang', lang);
+  
+  // Highlight active lang button
+  document.querySelectorAll('.lang-btn-top').forEach(btn => btn.classList.remove('active'));
+  const activeBtn = document.getElementById('db-btn-' + lang);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  // Translate Topbar
+  const metaText = DB_L[lang]['top-meta']
+    .replace('{{ franchise }}', D.franchise)
+    .replace('{{ n_stores }}', D.n_stores)
+    .replace('{{ period }}', D.period);
+  document.getElementById('top-meta-text').innerHTML = metaText;
+  
+  const serverPdfBtn = document.querySelector('.btn-print-server');
+  if (serverPdfBtn) serverPdfBtn.textContent = DB_L[lang]['btn-pdf-server'];
+  
+  const serverPptxBtn = document.querySelector('.btn-pptx');
+  if (serverPptxBtn) serverPptxBtn.textContent = DB_L[lang]['btn-pptx-server'];
+  
+  // Re-run standard tab switcher to repaint charts and lists under the selected language
+  drawTab(activeTab);
+}
+
+// Hook into DOMContentLoaded to run language alignment
+window.addEventListener('DOMContentLoaded', () => {
+  changeDashboardLang(currentLang);
+});
+
+
 // ─── HELPERS ─────────────────────────────────────────────────
 const sn = s => String(s).replace(/ \[.\]$/,'');
 const pct = (a,b) => b ? (a/b*100).toFixed(1)+'%' : '--';
@@ -896,7 +1297,7 @@ const coNoScales = {
 
 // BAR ROW HTML
 const barRow = (lbl,val,max,col,pctStr) => `<div class="br">
-  <span class="br-label">${lbl}</span>
+  <span class="br-label">${tr(lbl)}</span>
   <div class="br-track"><div class="br-fill" style="width:${(val/max*100).toFixed(0)}%;background:${col}"></div></div>
   <span class="br-val" style="color:${col}">${pctStr}</span>
 </div>`;
@@ -983,11 +1384,11 @@ function drawResumen() {
 
     const totArea = D.cash_total + D.allstore_total + D.delivery_total + D.dt_total + D.cam_total;
     const areas = [
-      { label: 'Caja', val: D.cash_total, col: '--cashier', icon: '💰' },
-      { label: 'Toda la Tienda', val: D.allstore_total, col: '--allstore', icon: '🏪' },
-      { label: 'Delivery', val: D.delivery_total, col: '--delivery', icon: '🏍️' },
-      { label: 'Drive Thru', val: D.dt_total, col: '--drivethru', icon: '🚗' },
-      { label: 'Cam Check', val: D.cam_total, col: '--cam', icon: '📷' }
+      { label: tr('Caja'), val: D.cash_total, col: '--cashier', icon: '💰' },
+      { label: tr('Toda la Tienda'), val: D.allstore_total, col: '--allstore', icon: '🏪' },
+      { label: tr('Delivery'), val: D.delivery_total, col: '--delivery', icon: '🏍️' },
+      { label: tr('Drive Thru'), val: D.dt_total, col: '--drivethru', icon: '🚗' },
+      { label: tr('Cam Check'), val: D.cam_total, col: '--cam', icon: '📷' }
     ].sort((a,b) => b.val - a.val);
 
     document.getElementById('cAreaDistLegend').innerHTML = areas.map(a => {
@@ -1036,15 +1437,15 @@ function drawResumen() {
   kill('cDonut');
   CH['cDonut'] = new Chart(document.getElementById('cDonut'),{
     type:'doughnut',
-    data:{labels:['Experiencia del Cliente','Reducción de Costos','Conformidad Operacional'],
+    data:{labels:[tr('Experiencia del Cliente'),tr('Reducción de Costos'),tr('Conformidad Operacional')],
           datasets:[{data:[D.ce,D.rc,D.co],backgroundColor:[getCol('--ce')+'99',getCol('--rc')+'99',getCol('--co')+'99'],borderColor:[getCol('--ce'),getCol('--rc'),getCol('--co')],borderWidth:2,hoverOffset:6}]},
     options:{...coNoScales,cutout:'70%',plugins:{legend:{display:false}, datalabels:{display:false}, tooltip:{...coNoScales.plugins.tooltip,callbacks:{label:i=>`${i.label}: ${fmt(i.raw)} (${(i.raw/D.kbp*100).toFixed(1)}%)`}}}}
   });
 
   const kbpItems = [
-    { label: 'Experiencia del Cliente', val: D.ce, col: '--ce', icon: '' },
-    { label: 'Reducción de Costos', val: D.rc, col: '--rc', icon: '' },
-    { label: 'Conformidad Operacional', val: D.co, col: '--co', icon: '' }
+    { label: tr('Experiencia del Cliente'), val: D.ce, col: '--ce', icon: '' },
+    { label: tr('Reducción de Costos'), val: D.rc, col: '--rc', icon: '' },
+    { label: tr('Conformidad Operacional'), val: D.co, col: '--co', icon: '' }
   ].sort((a,b) => b.val - a.val);
 
   document.getElementById('cDonutLegend').innerHTML = kbpItems.map(a => {
@@ -1209,11 +1610,11 @@ function drawAreas() {
       data: {
         labels: aStores,
         datasets: [
-          {label:'Caja', data:dataSlice.map(s=>s[1]), backgroundColor:getCol('--cashier')+'99', borderColor:getCol('--cashier'), borderWidth:1},
-          {label:'Toda la Tienda', data:dataSlice.map(s=>s[2]), backgroundColor:getCol('--allstore')+'99', borderColor:getCol('--allstore'), borderWidth:1},
-          {label:'Delivery', data:dataSlice.map(s=>s[3]), backgroundColor:getCol('--delivery')+'99', borderColor:getCol('--delivery'), borderWidth:1},
-          {label:'Drive Thru', data:dataSlice.map(s=>s[4]), backgroundColor:getCol('--drivethru')+'99', borderColor:getCol('--drivethru'), borderWidth:1},
-          {label:'Cam Check', data:dataSlice.map(s=>s[5]), backgroundColor:getCol('--cam')+'99', borderColor:getCol('--cam'), borderWidth:1}
+          {label:tr('Caja'), data:dataSlice.map(s=>s[1]), backgroundColor:getCol('--cashier')+'99', borderColor:getCol('--cashier'), borderWidth:1},
+          {label:tr('Toda la Tienda'), data:dataSlice.map(s=>s[2]), backgroundColor:getCol('--allstore')+'99', borderColor:getCol('--allstore'), borderWidth:1},
+          {label:tr('Delivery'), data:dataSlice.map(s=>s[3]), backgroundColor:getCol('--delivery')+'99', borderColor:getCol('--delivery'), borderWidth:1},
+          {label:tr('Drive Thru'), data:dataSlice.map(s=>s[4]), backgroundColor:getCol('--drivethru')+'99', borderColor:getCol('--drivethru'), borderWidth:1},
+          {label:tr('Cam Check'), data:dataSlice.map(s=>s[5]), backgroundColor:getCol('--cam')+'99', borderColor:getCol('--cam'), borderWidth:1}
         ]
       },
       options: {
